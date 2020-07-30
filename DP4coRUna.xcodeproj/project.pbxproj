@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
 		91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EE24D25926009EA97F /* SceneDelegate.swift */; };
-		91C557F124D25926009EA97F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* ViewController.swift */; };
+		91C557F124D25926009EA97F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* MapViewController.swift */; };
 		91C557F424D25926009EA97F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C557F224D25926009EA97F /* Main.storyboard */; };
 		91C557F624D25927009EA97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C557F524D25927009EA97F /* Assets.xcassets */; };
 		91C557F924D25927009EA97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C557F724D25927009EA97F /* LaunchScreen.storyboard */; };
 		91C5580424D25927009EA97F /* DP4coRUnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5580324D25927009EA97F /* DP4coRUnaTests.swift */; };
 		91C5580F24D25927009EA97F /* DP4coRUnaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5580E24D25927009EA97F /* DP4coRUnaUITests.swift */; };
+		91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5582024D2A0D7009EA97F /* PersonalTestController.swift */; };
+		91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5582224D2A0F9009EA97F /* PreferenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C557EC24D25926009EA97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C557EE24D25926009EA97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		91C557F024D25926009EA97F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91C557F024D25926009EA97F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		91C557F324D25926009EA97F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91C557F524D25927009EA97F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91C557F824D25927009EA97F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		91C5580A24D25927009EA97F /* DP4coRUnaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DP4coRUnaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C5580E24D25927009EA97F /* DP4coRUnaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DP4coRUnaUITests.swift; sourceTree = "<group>"; };
 		91C5581024D25927009EA97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C5582024D2A0D7009EA97F /* PersonalTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTestController.swift; sourceTree = "<group>"; };
+		91C5582224D2A0F9009EA97F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,11 @@
 		91C557EB24D25926009EA97F /* DP4coRUna */ = {
 			isa = PBXGroup;
 			children = (
+				91C5581F24D2598E009EA97F /* Controllers */,
+				91C5581E24D25987009EA97F /* Views */,
+				91C5581C24D25977009EA97F /* Models */,
 				91C557EC24D25926009EA97F /* AppDelegate.swift */,
 				91C557EE24D25926009EA97F /* SceneDelegate.swift */,
-				91C557F024D25926009EA97F /* ViewController.swift */,
-				91C557F224D25926009EA97F /* Main.storyboard */,
 				91C557F524D25927009EA97F /* Assets.xcassets */,
 				91C557F724D25927009EA97F /* LaunchScreen.storyboard */,
 				91C557FA24D25927009EA97F /* Info.plist */,
@@ -126,6 +131,31 @@
 				91C5581024D25927009EA97F /* Info.plist */,
 			);
 			path = DP4coRUnaUITests;
+			sourceTree = "<group>";
+		};
+		91C5581C24D25977009EA97F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91C5581E24D25987009EA97F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91C557F224D25926009EA97F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91C5581F24D2598E009EA97F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91C557F024D25926009EA97F /* MapViewController.swift */,
+				91C5582024D2A0D7009EA97F /* PersonalTestController.swift */,
+				91C5582224D2A0F9009EA97F /* PreferenceController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91C557F124D25926009EA97F /* ViewController.swift in Sources */,
+				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
+				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
+				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
