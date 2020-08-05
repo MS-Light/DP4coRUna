@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonalTestController: UIViewController {
+class PersonalTestController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {

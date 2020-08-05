@@ -8,7 +8,7 @@
 import UIKit
 
 class PerferenceController: UITableViewController {
-    let itemArray = ["a", "b", "Something to do"]
+    var itemArray = ["WiFi", "BlueTooth", "GPS"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class PerferenceController: UITableViewController {
         return itemArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.preferenceCell, for: indexPath)
         
         cell.textLabel?.text = itemArray[indexPath.row]
         

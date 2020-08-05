@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
 		91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EE24D25926009EA97F /* SceneDelegate.swift */; };
 		91C557F124D25926009EA97F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* MapViewController.swift */; };
@@ -46,6 +47,7 @@
 		3B248C1DFD8A738EB799A184 /* Pods-DP4coRUnaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUnaTests.debug.xcconfig"; path = "Target Support Files/Pods-DP4coRUnaTests/Pods-DP4coRUnaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D86F047AA0AB8374633A9D2 /* Pods_DP4coRUnaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DP4coRUnaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C437E13C56928A09ECE067 /* Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; path = "Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C557EC24D25926009EA97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C557EE24D25926009EA97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +117,6 @@
 				3B248C1DFD8A738EB799A184 /* Pods-DP4coRUnaTests.debug.xcconfig */,
 				02FB8552F712DEB9877E2917 /* Pods-DP4coRUnaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,6 +178,7 @@
 		91C5581C24D25977009EA97F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				91A13ADB24DB58B90035F9FE /* constant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
+				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
 				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
