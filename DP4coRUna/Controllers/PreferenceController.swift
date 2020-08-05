@@ -8,10 +8,23 @@
 import UIKit
 
 class PerferenceController: UITableViewController {
-    var itemArray = ["WiFi", "BlueTooth", "GPS"]
+    var itemArray = K.preferenceItemArray
+    let defaults = UserDefaults.standard
+    var itemArraySelected: Set<SaveOptions>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = defaults.object(forKey: K.preferenceCell) as? Set<SaveOptions>{
+            itemArraySelected = items
+        }
+        if itemArraySelected != nil{
+            for i in itemArraySelected!{
+                i.tableCell.cellForRow(at:i.indexPath)?.accessoryType = .checkmark
+            }
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,8 +42,14 @@ class PerferenceController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at:indexPath)?.accessoryType == .checkmark{
             tableView.cellForRow(at:indexPath)?.accessoryType = .none
+            let a = SaveOptions(tableCell: tableView, indexPath: indexPath)
+            self.itemArraySelected?.remove(a)
+            self.defaults.setValue(self.itemArraySelected, forKey: K.perosonalTestCell)
         }else{
             tableView.cellForRow(at:indexPath)?.accessoryType = .checkmark
+            let a = SaveOptions(tableCell: tableView, indexPath: indexPath)
+            self.itemArraySelected?.insert(a)
+            self.defaults.setValue(self.itemArraySelected, forKey: K.perosonalTestCell)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)

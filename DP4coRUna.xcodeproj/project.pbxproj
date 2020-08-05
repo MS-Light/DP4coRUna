@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
+		91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADD24DB6D320035F9FE /* SaveOptions.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
 		91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EE24D25926009EA97F /* SceneDelegate.swift */; };
 		91C557F124D25926009EA97F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* MapViewController.swift */; };
@@ -48,6 +49,7 @@
 		3D86F047AA0AB8374633A9D2 /* Pods_DP4coRUnaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DP4coRUnaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C437E13C56928A09ECE067 /* Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; path = "Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		91A13ADD24DB6D320035F9FE /* SaveOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOptions.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C557EC24D25926009EA97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C557EE24D25926009EA97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				91A13ADB24DB58B90035F9FE /* constant.swift */,
+				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
+				91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */,
 				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
 				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
 			);
