@@ -47,6 +47,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Gather location updates to get SSID information</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Gather location updates to get SSID information</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string> gather location update to get ssid </string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
