@@ -9,15 +9,25 @@ import UIKit
 
 class PersonalTestController: UITableViewController {
     
-    var itemArray = K.personalItemArray
-    
-    let defaults = UserDefaults.standard
+    var itemArray = [SaveOptions]()
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("PersonalInfo.plist")
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let items = defaults.array(forKey: K.perosonalTestCell) as? [String]{
-            itemArray = items
-        }
+        let newItem = SaveOptions()
+        newItem.tableCell = "func1"
+        itemArray.append(newItem)
+        
+        let newItem2 = SaveOptions()
+        newItem2.tableCell = "func2"
+        itemArray.append(newItem2)
+        
+        let newItem3 = SaveOptions()
+        newItem3.tableCell = "func3"
+        itemArray.append(newItem3)
+        
+        loadItems()
         // Do any additional setup after loading the view.
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,22 +36,40 @@ class PersonalTestController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.perosonalTestCell, for: indexPath)
         
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = itemArray[indexPath.row].tableCell
         
+        cell.accessoryType = itemArray[indexPath.row].switchedON ? .checkmark : .none
+        self.saveItems()
+
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at:indexPath)?.accessoryType == .checkmark{
-            tableView.cellForRow(at:indexPath)?.accessoryType = .none
-            self.defaults.setValue(self.itemArray, forKey: K.perosonalTestCell)
-        }else{
-            tableView.cellForRow(at:indexPath)?.accessoryType = .checkmark
-            self.defaults.setValue(self.itemArray, forKey: K.perosonalTestCell)
-        }
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        itemArray[indexPath.row].switchedON = !itemArray[indexPath.row].switchedON
+        tableView.reloadData()
+    }
+    
+    func saveItems(){
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }catch{
+            print("\(error)")
+        }
+    }
+    
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do{
+                itemArray = try decoder.decode([SaveOptions].self, from: data)
+            }catch{
+                print("Decoding error \(error)")
+            }
+        }
     }
 
 }

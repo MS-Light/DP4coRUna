@@ -8,23 +8,25 @@
 import UIKit
 
 class PerferenceController: UITableViewController {
-    var itemArray = K.preferenceItemArray
-    let defaults = UserDefaults.standard
-    var itemArraySelected: Set<SaveOptions>?
+    var itemArray = [SaveOptions]()
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("SaveOptions.plist")
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let newItem = SaveOptions()
+        newItem.tableCell = "Wifi"
+        itemArray.append(newItem)
         
-        if let items = defaults.object(forKey: K.preferenceCell) as? Set<SaveOptions>{
-            itemArraySelected = items
-        }
-        if itemArraySelected != nil{
-            for i in itemArraySelected!{
-                i.tableCell.cellForRow(at:i.indexPath)?.accessoryType = .checkmark
-            }
-        }
+        let newItem2 = SaveOptions()
+        newItem2.tableCell = "Bluetooth"
+        itemArray.append(newItem2)
         
+        let newItem3 = SaveOptions()
+        newItem3.tableCell = "GPS"
+        itemArray.append(newItem3)
         
+        loadItems()
         // Do any additional setup after loading the view.
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,26 +35,40 @@ class PerferenceController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.preferenceCell, for: indexPath)
         
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = itemArray[indexPath.row].tableCell
         
+        cell.accessoryType = itemArray[indexPath.row].switchedON ? .checkmark : .none
+        self.saveItems()
+
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at:indexPath)?.accessoryType == .checkmark{
-            tableView.cellForRow(at:indexPath)?.accessoryType = .none
-            let a = SaveOptions(tableCell: tableView, indexPath: indexPath)
-            self.itemArraySelected?.remove(a)
-            self.defaults.setValue(self.itemArraySelected, forKey: K.perosonalTestCell)
-        }else{
-            tableView.cellForRow(at:indexPath)?.accessoryType = .checkmark
-            let a = SaveOptions(tableCell: tableView, indexPath: indexPath)
-            self.itemArraySelected?.insert(a)
-            self.defaults.setValue(self.itemArraySelected, forKey: K.perosonalTestCell)
-        }
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        itemArray[indexPath.row].switchedON = !itemArray[indexPath.row].switchedON
+        tableView.reloadData()
+    }
+    
+    func saveItems(){
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }catch{
+            print("\(error)")
+        }
+    }
+    
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do{
+                itemArray = try decoder.decode([SaveOptions].self, from: data)
+            }catch{
+                print("Decoding error \(error)")
+            }
+        }
     }
 
 }

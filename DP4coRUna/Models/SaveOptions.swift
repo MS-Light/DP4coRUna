@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-struct SaveOptions: Hashable{
-    let tableCell: UITableView
-    let indexPath: IndexPath
+class SaveOptions: Codable{
+    var tableCell: String = ""
+    var switchedON: Bool = false
 }
