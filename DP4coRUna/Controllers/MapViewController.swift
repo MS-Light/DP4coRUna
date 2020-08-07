@@ -9,31 +9,21 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager?
-    
+class MapViewController: UIViewController{
     @IBOutlet weak var Map: MKMapView!
+    
+    private let locationManager = CLLocationManager()
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestWhenInUseAuthorization()
-
-        view.backgroundColor = .gray
-        // Do any additional setup after loading the view.
-        var currentLoc: CLLocation!
-        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-        CLLocationManager.authorizationStatus() == .authorizedAlways) {
-           currentLoc = locationManager?.location
-           print(currentLoc.coordinate.latitude)
-           print(currentLoc.coordinate.longitude)
-        }
+        attemptLocationAccess()
     }
 
+    // A permission check function
+    /*
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
@@ -43,6 +33,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
+    }*/
+    
+    private func attemptLocationAccess() {
+        guard CLLocationManager.locationServicesEnabled() else {
+          return
+        }
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        
+        locationManager.delegate = self
+
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+          locationManager.requestWhenInUseAuthorization()
+        } else {
+          locationManager.requestLocation()
+        }
     }
+    
+    
 }
 
+extension MapViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+  }
+
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  }
+
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print("Error requesting location: \(error.localizedDescription)")
+  }
+}
