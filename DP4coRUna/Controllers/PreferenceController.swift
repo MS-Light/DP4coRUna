@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PerferenceController: UITableViewController {
+
     var itemArray = [SaveOptions]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("SaveOptions.plist")
 

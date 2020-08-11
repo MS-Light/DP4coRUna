@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9147673C24E2EB5D00658554 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673B24E2EB5D00658554 /* Category.swift */; };
+		9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673D24E2EC1F00658554 /* DataSourceController.swift */; };
+		9147674024E2EF1B00658554 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673F24E2EF1B00658554 /* Item.swift */; };
+		9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674124E2F0F700658554 /* SwipeTableViewController.swift */; };
+		9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674324E2F1A200658554 /* WiFiSourceController.swift */; };
 		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
 		91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADD24DB6D320035F9FE /* SaveOptions.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
@@ -48,6 +53,11 @@
 		3B248C1DFD8A738EB799A184 /* Pods-DP4coRUnaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUnaTests.debug.xcconfig"; path = "Target Support Files/Pods-DP4coRUnaTests/Pods-DP4coRUnaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D86F047AA0AB8374633A9D2 /* Pods_DP4coRUnaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DP4coRUnaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C437E13C56928A09ECE067 /* Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; path = "Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9147673B24E2EB5D00658554 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9147673D24E2EC1F00658554 /* DataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceController.swift; sourceTree = "<group>"; };
+		9147673F24E2EF1B00658554 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9147674124E2F0F700658554 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		9147674324E2F1A200658554 /* WiFiSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSourceController.swift; sourceTree = "<group>"; };
 		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		91A13ADD24DB6D320035F9FE /* SaveOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOptions.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +192,8 @@
 			children = (
 				91A13ADB24DB58B90035F9FE /* constant.swift */,
 				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
+				9147673B24E2EB5D00658554 /* Category.swift */,
+				9147673F24E2EF1B00658554 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +212,9 @@
 				91C557F024D25926009EA97F /* MapViewController.swift */,
 				91C5582024D2A0D7009EA97F /* PersonalTestController.swift */,
 				91C5582224D2A0F9009EA97F /* PreferenceController.swift */,
+				9147673D24E2EC1F00658554 /* DataSourceController.swift */,
+				9147674124E2F0F700658554 /* SwipeTableViewController.swift */,
+				9147674324E2F1A200658554 /* WiFiSourceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -442,13 +457,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9147674024E2EF1B00658554 /* Item.swift in Sources */,
 				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
+				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
 				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
 				91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */,
 				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
 				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
+				9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */,
+				9147673C24E2EB5D00658554 /* Category.swift in Sources */,
+				9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

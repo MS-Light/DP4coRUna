@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PersonalTestController: UITableViewController {
     
@@ -16,7 +17,7 @@ class PersonalTestController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let newItem = SaveOptions()
-        newItem.tableCell = "func1"
+        newItem.tableCell = "WiFi Data"
         itemArray.append(newItem)
         
         let newItem2 = SaveOptions()
@@ -37,8 +38,7 @@ class PersonalTestController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.perosonalTestCell, for: indexPath)
         
         cell.textLabel?.text = itemArray[indexPath.row].tableCell
-        
-        cell.accessoryType = itemArray[indexPath.row].switchedON ? .checkmark : .none
+
         self.saveItems()
 
         return cell
@@ -46,10 +46,14 @@ class PersonalTestController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        itemArray[indexPath.row].switchedON = !itemArray[indexPath.row].switchedON
-        tableView.reloadData()
+        performSegue(withIdentifier: K.wifiDelegate, sender: self)
     }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destinationVC = segue.destination as! DataSourceController
+//        if let indexPath = tableView.indexPathForSelectedRow {
+//
+//        }
+//    }
     
     func saveItems(){
         let encoder = PropertyListEncoder()
