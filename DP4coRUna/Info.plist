@@ -20,14 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Gather location updates to get SSID information</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Gather location updates to get SSID information</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string> gather location update to get ssid </string>
-	<key>MKDirectionsApplicationSupportedModes</key>
-	<array/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Gather location updates to get SSID information</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -47,12 +47,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Gather location updates to get SSID information</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Gather location updates to get SSID information</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string> gather location update to get ssid </string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -69,6 +63,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Get Bluetooth info around you</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
