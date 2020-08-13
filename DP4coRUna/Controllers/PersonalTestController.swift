@@ -21,13 +21,16 @@ class PersonalTestController: UITableViewController {
         itemArray.append(newItem)
         
         let newItem2 = SaveOptions()
-        newItem2.tableCell = "func2"
+        newItem2.tableCell = "Bluetooth Data"
         itemArray.append(newItem2)
         
         let newItem3 = SaveOptions()
-        newItem3.tableCell = "func3"
+        newItem3.tableCell = "Existing User Data"
         itemArray.append(newItem3)
         
+        let newItem4 = SaveOptions()
+        newItem4.tableCell = "Add Info"
+        itemArray.append(newItem4)
         loadItems()
         // Do any additional setup after loading the view.
     }
@@ -46,7 +49,13 @@ class PersonalTestController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.wifiDelegate, sender: self)
+        if indexPath.row == 0{
+            performSegue(withIdentifier: K.wifiDelegate, sender: self)
+        }else if indexPath.row == 2{
+            performSegue(withIdentifier: K.userInfo, sender: self)
+        }else if indexPath.row == 3{
+            performSegue(withIdentifier: K.inputInfo, sender: self)
+        }
     }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let destinationVC = segue.destination as! DataSourceController

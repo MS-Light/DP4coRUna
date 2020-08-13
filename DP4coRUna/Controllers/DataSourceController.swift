@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-import CoreBluetooth
+//import CoreBluetooth
 
 class DataSourceController: SwipeTableViewController{
     let realm = try! Realm()
@@ -15,7 +15,7 @@ class DataSourceController: SwipeTableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+ //       centralManager = CBCentralManager(delegate: self, queue: nil)
         loadCategories()
         tableView.separatorStyle = .none
     }
@@ -103,37 +103,37 @@ class DataSourceController: SwipeTableViewController{
     }
 }
 
-extension DataSourceController: CBPeripheralDelegate, CBCentralManagerDelegate{
-    // Properties
-    private var centralManager: CBCentralManager!
-    private var peripheral: CBPeripheral!
-    
-    // If we're powered on, start scanning
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("Central state update")
-        if central.state != .poweredOn {
-            print("Central is not powered on")
-        } else {
-            print("Central scanning for", ParticlePeripheral.particleLEDServiceUUID);
-            centralManager.scanForPeripherals(
-            withServices: [ParticlePeripheral.particleLEDServiceUUID],
-            options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
-        }
-    }
-    // Handles the result of the scan
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-
-        // We've found it so stop scan
-        self.centralManager.stopScan()
-
-        // Copy the peripheral instance
-        self.peripheral = peripheral
-        self.peripheral.delegate = self
-
-        // Connect!
-        self.centralManager.connect(self.peripheral, options: nil)
-
-    }
-    
-
-}
+//extension DataSourceController: CBPeripheralDelegate, CBCentralManagerDelegate{
+//    // Properties
+//    private var centralManager: CBCentralManager!
+//    private var peripheral: CBPeripheral!
+//
+//    // If we're powered on, start scanning
+//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+//        print("Central state update")
+//        if central.state != .poweredOn {
+//            print("Central is not powered on")
+//        } else {
+//            print("Central scanning for", ParticlePeripheral.particleLEDServiceUUID);
+//            centralManager.scanForPeripherals(
+//            withServices: [ParticlePeripheral.particleLEDServiceUUID],
+//            options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
+//        }
+//    }
+//    // Handles the result of the scan
+//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+//
+//        // We've found it so stop scan
+//        self.centralManager.stopScan()
+//
+//        // Copy the peripheral instance
+//        self.peripheral = peripheral
+//        self.peripheral.delegate = self
+//
+//        // Connect!
+//        self.centralManager.connect(self.peripheral, options: nil)
+//
+//    }
+//
+//
+//}

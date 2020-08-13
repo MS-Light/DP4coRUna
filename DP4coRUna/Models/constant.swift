@@ -13,6 +13,8 @@ struct K{
     static let preferenceCell = "ToDoItemCell"
     static let dataSourceCell = "DataSourceCell"
     static let wifiDelegate = "goToWifiData"
+    static let inputInfo = "inputInfo"
+    static let userInfo = "userInfo"
     static let wifiDetailDelegate = "goToWifiDetail"
     static let personalItemArray = ["Number of people meet", "density", "Wifi Signal Strength"]
     static let preferenceItemArray = ["WiFi", "BlueTooth", "GPS"]
