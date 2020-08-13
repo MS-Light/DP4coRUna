@@ -12,7 +12,7 @@ class WiFiSourceController: SwipeTableViewController{
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var wifiCell: Results<Item>?
+    var wifiCell: Results<SignalDetail>?
     let realm = try! Realm()
     var selectedCategory: Category? {
         didSet {
@@ -73,7 +73,7 @@ class WiFiSourceController: SwipeTableViewController{
             if let currentCategory = self.selectedCategory {
                 do {
                     try self.realm.write {
-                        let newItem = Item()
+                        let newItem = SignalDetail()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)

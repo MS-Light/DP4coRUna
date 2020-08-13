@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Item: Object{
+class SignalDetail: Object{
     @objc dynamic var title: String = ""
     @objc dynamic var done: Bool = false
     @objc dynamic var signalStrength: Double = 0.0

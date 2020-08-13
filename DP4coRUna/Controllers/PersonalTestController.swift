@@ -52,7 +52,7 @@ class PersonalTestController: UITableViewController {
         if indexPath.row == 0{
             performSegue(withIdentifier: K.wifiDelegate, sender: self)
         }else if indexPath.row == 2{
-            performSegue(withIdentifier: K.userInfo, sender: self)
+            performSegue(withIdentifier: K.placeInfo, sender: self)
         }else if indexPath.row == 3{
             performSegue(withIdentifier: K.inputInfo, sender: self)
         }
