@@ -17,12 +17,12 @@ class MapViewController: UIViewController{
     private let locationManager = CLLocationManager()
     private var currentPlace: CLPlacemark?
     
-    //initialize at Rutgers 
-    let initialLocation = CLLocation(latitude: 40.5008, longitude: -74.4474)
+    //initialize at Rutgers
+    //let initialLocation = CLLocation(latitude: 40.5008, longitude: -74.4474)
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
-        Map.centerToLocation(initialLocation)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +74,14 @@ extension MapViewController: CLLocationManagerDelegate {
       return
     }
     manager.requestLocation()
+    manager.startUpdatingLocation()
   }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let firstLocation = locations.first else {
       return
     }
+    // write the location to textfield
     CLGeocoder().reverseGeocodeLocation(firstLocation) { places, _ in
       guard
         let firstPlace = places?.first,
@@ -88,7 +90,7 @@ extension MapViewController: CLLocationManagerDelegate {
           return
       }
       self.currentPlace = firstPlace
-      self.TextField.text = firstPlace.abbreviation
+        self.TextField.text = firstPlace.abbreviation
        
     }
     let center = CLLocationCoordinate2D(latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
@@ -129,15 +131,3 @@ extension CLPlacemark {
   }
 }
 
-private extension MKMapView {
-  func centerToLocation(
-    _ location: CLLocation,
-    regionRadius: CLLocationDistance = 1000
-  ) {
-    let coordinateRegion = MKCoordinateRegion(
-      center: location.coordinate,
-      latitudinalMeters: regionRadius,
-      longitudinalMeters: regionRadius)
-    setRegion(coordinateRegion, animated: true)
-  }
-}
