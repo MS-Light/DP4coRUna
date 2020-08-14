@@ -17,12 +17,17 @@ class MapViewController: UIViewController{
     private let locationManager = CLLocationManager()
     private var currentPlace: CLPlacemark?
     
+    //initialize at Rutgers 
+    let initialLocation = CLLocation(latitude: 40.5008, longitude: -74.4474)
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        Map.centerToLocation(initialLocation)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         attemptLocationAccess()
+       
     }
 
     // A permission check function
@@ -50,6 +55,7 @@ class MapViewController: UIViewController{
           locationManager.requestWhenInUseAuthorization()
         } else {
           locationManager.requestLocation()
+          locationManager.startUpdatingLocation()
         }
     }
     
@@ -83,7 +89,12 @@ extension MapViewController: CLLocationManagerDelegate {
       }
       self.currentPlace = firstPlace
       self.TextField.text = firstPlace.abbreviation
+       
     }
+    let center = CLLocationCoordinate2D(latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
+    let myRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    Map.setRegion(myRegion, animated: true)
+    
   }
 
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -115,5 +126,18 @@ extension CLPlacemark {
     }
 
     return [subThoroughfare, thoroughfare].compactMap { $0 }.joined(separator: " ")
+  }
+}
+
+private extension MKMapView {
+  func centerToLocation(
+    _ location: CLLocation,
+    regionRadius: CLLocationDistance = 1000
+  ) {
+    let coordinateRegion = MKCoordinateRegion(
+      center: location.coordinate,
+      latitudinalMeters: regionRadius,
+      longitudinalMeters: regionRadius)
+    setRegion(coordinateRegion, animated: true)
   }
 }
