@@ -9,13 +9,27 @@ import UIKit
 import MapKit
 import CoreLocation
 import RealmSwift
+import Foundation
+import SystemConfiguration.CaptiveNetwork
 
 class MapViewController: UIViewController{
     @IBOutlet private var Map: MKMapView!
     @IBOutlet private var TextField: UITextField!
+    @IBOutlet weak var ssid: UILabel!
+    
     
     private let locationManager = CLLocationManager()
     private var currentPlace: CLPlacemark?
+    let service = WiFiInfoService()
+    
+    
+    /*
+    var currentNetworkInfos: Array<NetworkInfo>? {
+            get {
+                return SSID.fetchNetworkInfo()
+            }
+        }
+ */
     
     //initialize at Rutgers
     //let initialLocation = CLLocation(latitude: 40.5008, longitude: -74.4474)
@@ -28,8 +42,13 @@ class MapViewController: UIViewController{
         super.viewDidLoad()
         attemptLocationAccess()
        
+       
     }
-
+/*
+    func updateWiFi() {
+            print("SSID: \(currentNetworkInfos?.first?.ssid ?? "")")
+            self.ssid.text = currentNetworkInfos?.first?.interface
+        }  */
     // A permission check function
     /*
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -53,9 +72,21 @@ class MapViewController: UIViewController{
 
         if CLLocationManager.authorizationStatus() == .notDetermined {
           locationManager.requestWhenInUseAuthorization()
-        } else {
+      //      updateWiFi()
+            let info = service.getWiFiInfo()
+            self.ssid.text = info?.rssi
+        } else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            locationManager.requestAlwaysAuthorization()
+            let info = service.getWiFiInfo()
+            self.ssid.text = info?.rssi
+        } else{
           locationManager.requestLocation()
           locationManager.startUpdatingLocation()
+       //   updateWiFi()
+            let info = service.getWiFiInfo()
+            self.ssid.text = info?.rssi
+            print(info?.rssi)
+            print("this is ssid")
         }
     }
     
@@ -70,6 +101,7 @@ extension MapViewController: UITextFieldDelegate {
 
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+  //  updateWiFi()
     guard status == .authorizedWhenInUse else {
       return
     }
@@ -130,4 +162,34 @@ extension CLPlacemark {
     return [subThoroughfare, thoroughfare].compactMap { $0 }.joined(separator: " ")
   }
 }
+/*
+public class SSID {
+    class func fetchNetworkInfo() -> [NetworkInfo]? {
+        if let interfaces: NSArray = CNCopySupportedInterfaces() {
+            var networkInfos = [NetworkInfo]()
+            for interface in interfaces {
+                let interfaceName = interface as! String
+                var networkInfo = NetworkInfo(interface: interfaceName,
+                                              success: false,
+                                              ssid: nil,
+                                              bssid: nil)
+                if let dict = CNCopyCurrentNetworkInfo(interfaceName as CFString) as NSDictionary? {
+                    networkInfo.success = true
+                    networkInfo.ssid = dict[kCNNetworkInfoKeySSID as String] as? String
+                    networkInfo.bssid = dict[kCNNetworkInfoKeyBSSID as String] as? String
+                }
+                networkInfos.append(networkInfo)
+            }
+            return networkInfos
+        }
+        return nil
+    }
+}
 
+struct NetworkInfo {
+    var interface: String
+    var success: Bool = false
+    var ssid: String?
+    var bssid: String?
+}
+*/
