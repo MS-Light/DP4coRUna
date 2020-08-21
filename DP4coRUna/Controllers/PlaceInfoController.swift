@@ -20,11 +20,11 @@ class PlaceInfoController: SwipeTableViewController {
         tableView.separatorStyle = .none
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
-        }
-        navBar.backgroundColor = UIColor(named: "#1D9BF6")
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
+//        }
+//        navBar.backgroundColor = UIColor(named: "#1D9BF6")
+//    }
     
     //Mark: - Tableview Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +34,7 @@ class PlaceInfoController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.textLabel?.text = placeInfo?[indexPath.row].place ?? "No Categories added yet"
+        cell.textLabel?.text = placeInfo?[indexPath.row].tag ?? "No Categories added yet"
         
         return cell
     }

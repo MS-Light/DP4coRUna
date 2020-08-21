@@ -9,6 +9,6 @@ import Foundation
 import RealmSwift
 
 class PlaceInfo: Object {
-    @objc dynamic var place: String = ""
+    @objc dynamic var tag: String = ""
     let placeDetail = List<PlaceDetail>()
 }

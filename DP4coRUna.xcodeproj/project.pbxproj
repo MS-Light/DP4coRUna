@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		9104404824EFA7FE004B5620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9104404724EFA7FE004B5620 /* Main.storyboard */; };
 		912157A724E4DA80006D6A5B /* AddPlaceInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157A624E4DA80006D6A5B /* AddPlaceInfoController.swift */; };
-		912157A924E4E1B4006D6A5B /* PlaceDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157A824E4E1B4006D6A5B /* PlaceDetailModel.swift */; };
-		912157AB24E4E28E006D6A5B /* PlaceInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AA24E4E28E006D6A5B /* PlaceInfoModel.swift */; };
+		912157A924E4E1B4006D6A5B /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157A824E4E1B4006D6A5B /* PlaceDetail.swift */; };
+		912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AA24E4E28E006D6A5B /* PlaceInfo.swift */; };
 		912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */; };
 		912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */; };
 		9147673C24E2EB5D00658554 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673B24E2EB5D00658554 /* Category.swift */; };
@@ -61,8 +61,8 @@
 		55C437E13C56928A09ECE067 /* Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; path = "Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9104404724EFA7FE004B5620 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		912157A624E4DA80006D6A5B /* AddPlaceInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceInfoController.swift; sourceTree = "<group>"; };
-		912157A824E4E1B4006D6A5B /* PlaceDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailModel.swift; sourceTree = "<group>"; };
-		912157AA24E4E28E006D6A5B /* PlaceInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoModel.swift; sourceTree = "<group>"; };
+		912157A824E4E1B4006D6A5B /* PlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
+		912157AA24E4E28E006D6A5B /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
 		912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoController.swift; sourceTree = "<group>"; };
 		912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailController.swift; sourceTree = "<group>"; };
 		9147673B24E2EB5D00658554 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
 				9147673B24E2EB5D00658554 /* Category.swift */,
 				9147673F24E2EF1B00658554 /* SignalDetail.swift */,
-				912157A824E4E1B4006D6A5B /* PlaceDetailModel.swift */,
-				912157AA24E4E28E006D6A5B /* PlaceInfoModel.swift */,
+				912157A824E4E1B4006D6A5B /* PlaceDetail.swift */,
+				912157AA24E4E28E006D6A5B /* PlaceInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
 				91F941A224EF276200F70EE1 /* WiFiInfoService.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
-				912157AB24E4E28E006D6A5B /* PlaceInfoModel.swift in Sources */,
+				912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */,
 				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
@@ -490,7 +490,7 @@
 				912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */,
 				9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */,
 				9147673C24E2EB5D00658554 /* Category.swift in Sources */,
-				912157A924E4E1B4006D6A5B /* PlaceDetailModel.swift in Sources */,
+				912157A924E4E1B4006D6A5B /* PlaceDetail.swift in Sources */,
 				9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */,
 				912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */,
 			);

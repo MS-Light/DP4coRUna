@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 
 class PlaceDetailController: SwipeTableViewController {
+    
     var placeDetail: Results<PlaceDetail>?
     let realm = try! Realm()
     var selectedCategory: PlaceInfo? {

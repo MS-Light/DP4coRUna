@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import RealmSwift
 
 class Category: Object {
