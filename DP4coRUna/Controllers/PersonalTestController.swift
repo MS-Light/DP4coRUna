@@ -31,6 +31,10 @@ class PersonalTestController: UITableViewController {
         let newItem4 = SaveOptions()
         newItem4.tableCell = "Add Info"
         itemArray.append(newItem4)
+        
+        let newItem5 = SaveOptions()
+        newItem5.tableCell = "Logger"
+        itemArray.append(newItem5)
         loadItems()
         // Do any additional setup after loading the view.
     }
@@ -55,6 +59,8 @@ class PersonalTestController: UITableViewController {
             performSegue(withIdentifier: K.placeInfo, sender: self)
         }else if indexPath.row == 3{
             performSegue(withIdentifier: K.inputInfo, sender: self)
+        }else if indexPath.row == 4{
+            performSegue(withIdentifier: K.logger, sender: self)
         }
     }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

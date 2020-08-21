@@ -18,6 +18,16 @@
 		9147674024E2EF1B00658554 /* SignalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673F24E2EF1B00658554 /* SignalDetail.swift */; };
 		9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674124E2F0F700658554 /* SwipeTableViewController.swift */; };
 		9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674324E2F1A200658554 /* WiFiSourceController.swift */; };
+		918502B324F067800062665F /* Sensors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502AF24F067800062665F /* Sensors.swift */; };
+		918502B424F067800062665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B024F067800062665F /* Logger.swift */; };
+		918502B524F067800062665F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B124F067800062665F /* Helpers.swift */; };
+		918502B624F067800062665F /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B224F067800062665F /* Bluetooth.swift */; };
+		918502BA24F0680A0062665F /* LoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B824F0680A0062665F /* LoggerViewController.swift */; };
+		918502BC24F06CF30062665F /* ultrasonicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502BB24F06CF30062665F /* ultrasonicData.swift */; };
+		918502BE24F06DE10062665F /* DetectorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502BD24F06DE10062665F /* DetectorSettingsViewController.swift */; };
+		918502C024F0722F0062665F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502BF24F0722F0062665F /* SettingsController.swift */; };
+		918502C224F079230062665F /* DetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502C124F079230062665F /* DetectorViewController.swift */; };
+		918502C424F07B9D0062665F /* LoggerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502C324F07B9D0062665F /* LoggerSetting.swift */; };
 		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
 		91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADD24DB6D320035F9FE /* SaveOptions.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
@@ -70,6 +80,16 @@
 		9147673F24E2EF1B00658554 /* SignalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalDetail.swift; sourceTree = "<group>"; };
 		9147674124E2F0F700658554 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9147674324E2F1A200658554 /* WiFiSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSourceController.swift; sourceTree = "<group>"; };
+		918502AF24F067800062665F /* Sensors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensors.swift; sourceTree = "<group>"; };
+		918502B024F067800062665F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		918502B124F067800062665F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		918502B224F067800062665F /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		918502B824F0680A0062665F /* LoggerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
+		918502BB24F06CF30062665F /* ultrasonicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ultrasonicData.swift; sourceTree = "<group>"; };
+		918502BD24F06DE10062665F /* DetectorSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorSettingsViewController.swift; sourceTree = "<group>"; };
+		918502BF24F0722F0062665F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		918502C124F079230062665F /* DetectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorViewController.swift; sourceTree = "<group>"; };
+		918502C324F07B9D0062665F /* LoggerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerSetting.swift; sourceTree = "<group>"; };
 		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		91A13ADD24DB6D320035F9FE /* SaveOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOptions.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +164,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		918502AE24F067240062665F /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				918502B224F067800062665F /* Bluetooth.swift */,
+				918502B124F067800062665F /* Helpers.swift */,
+				918502B024F067800062665F /* Logger.swift */,
+				918502AF24F067800062665F /* Sensors.swift */,
+				918502BB24F06CF30062665F /* ultrasonicData.swift */,
+				918502C324F07B9D0062665F /* LoggerSetting.swift */,
+			);
+			path = BlueTooth;
+			sourceTree = "<group>";
+		};
 		91C557E024D25925009EA97F = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +235,7 @@
 		91C5581C24D25977009EA97F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				918502AE24F067240062665F /* BlueTooth */,
 				91F941A124EF276200F70EE1 /* WiFiInfoService.swift */,
 				91A13ADB24DB58B90035F9FE /* constant.swift */,
 				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
@@ -224,6 +258,9 @@
 		91C5581F24D2598E009EA97F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				918502C124F079230062665F /* DetectorViewController.swift */,
+				918502BD24F06DE10062665F /* DetectorSettingsViewController.swift */,
+				918502B824F0680A0062665F /* LoggerViewController.swift */,
 				91C557F024D25926009EA97F /* MapViewController.swift */,
 				91C5582024D2A0D7009EA97F /* PersonalTestController.swift */,
 				91C5582224D2A0F9009EA97F /* PreferenceController.swift */,
@@ -233,6 +270,7 @@
 				912157A624E4DA80006D6A5B /* AddPlaceInfoController.swift */,
 				912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */,
 				912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */,
+				918502BF24F0722F0062665F /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -475,11 +513,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918502C024F0722F0062665F /* SettingsController.swift in Sources */,
 				9147674024E2EF1B00658554 /* SignalDetail.swift in Sources */,
+				918502B524F067800062665F /* Helpers.swift in Sources */,
+				918502B624F067800062665F /* Bluetooth.swift in Sources */,
 				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
+				918502BA24F0680A0062665F /* LoggerViewController.swift in Sources */,
 				91F941A224EF276200F70EE1 /* WiFiInfoService.swift in Sources */,
+				918502B324F067800062665F /* Sensors.swift in Sources */,
+				918502BE24F06DE10062665F /* DetectorSettingsViewController.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
+				918502BC24F06CF30062665F /* ultrasonicData.swift in Sources */,
 				912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */,
+				918502C224F079230062665F /* DetectorViewController.swift in Sources */,
 				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
@@ -489,10 +535,12 @@
 				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
 				912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */,
 				9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */,
+				918502B424F067800062665F /* Logger.swift in Sources */,
 				9147673C24E2EB5D00658554 /* Category.swift in Sources */,
 				912157A924E4E1B4006D6A5B /* PlaceDetail.swift in Sources */,
 				9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */,
 				912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */,
+				918502C424F07B9D0062665F /* LoggerSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

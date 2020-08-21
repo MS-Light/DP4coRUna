@@ -28,6 +28,32 @@ class PerferenceController: UITableViewController {
         newItem3.tableCell = "GPS"
         itemArray.append(newItem3)
         
+        let newItem4 = SaveOptions()
+        newItem4.tableCell = "Compass"
+        itemArray.append(newItem4)
+        
+        let newItem5 = SaveOptions()
+        newItem5.tableCell = "Altimeter"
+        itemArray.append(newItem5)
+        
+        let newItem6 = SaveOptions()
+        newItem6.tableCell = "Pedometer"
+        itemArray.append(newItem6)
+        
+        let newItem7 = SaveOptions()
+        newItem7.tableCell = "Accelerometer"
+        itemArray.append(newItem7)
+        
+        let newItem8 = SaveOptions()
+        newItem8.tableCell = "Gyroscope"
+        itemArray.append(newItem8)
+        
+        let newItem9 = SaveOptions()
+        newItem9.tableCell = "Proximity"
+        itemArray.append(newItem9)
+        
+        
+        
         loadItems()
         // Do any additional setup after loading the view.
     }
@@ -49,6 +75,31 @@ class PerferenceController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         itemArray[indexPath.row].switchedON = !itemArray[indexPath.row].switchedON
+        switch indexPath.row {
+        case 2:
+            LoggerSettings.gpsEnabled = itemArray[indexPath.row].switchedON
+        case 3:
+            LoggerSettings.compassEnabled = itemArray[indexPath.row].switchedON
+        case 4:
+            LoggerSettings.altimeterEnabled = itemArray[indexPath.row].switchedON
+        case 5:
+            LoggerSettings.pedometerEnabled = itemArray[indexPath.row].switchedON
+        case 6:
+            LoggerSettings.accelerometerEnabled = itemArray[indexPath.row].switchedON
+        case 7:
+            LoggerSettings.gyroscopeEnabled = itemArray[indexPath.row].switchedON
+        case 8:
+            LoggerSettings.proximityEnabled = itemArray[indexPath.row].switchedON
+        default:
+            print("Error on changing Switches")
+        }
+        if itemArray[3].switchedON {
+            // Inform that calibration is necessary
+            let alert = UIAlertController(title: "Note", message: "The compass must be calibrated to return true heading. Stand in an open area away from interference and move your phone through a figure 8 motion. If you choose not to do this, only the magnetic heading will be valid.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+            }))
+            present(alert, animated: true, completion: nil)
+        }
         tableView.reloadData()
     }
     

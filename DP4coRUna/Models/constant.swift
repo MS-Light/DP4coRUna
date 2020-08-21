@@ -19,5 +19,9 @@ struct K{
     static let wifiDetailDelegate = "goToWifiDetail"
     static let personalItemArray = ["Number of people meet", "density", "Wifi Signal Strength"]
     static let preferenceItemArray = ["WiFi", "BlueTooth", "GPS"]
-    
+    static let detectorSettings = "goToDetectorSettings"
+    static let switches = "goToSwitches"
+    static let logger = "goToLogger"
+    static let detector = "goToDetector"
+
 }
