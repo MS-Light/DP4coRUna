@@ -41,7 +41,7 @@ class WiFiInfoService: NSObject {
         guard let interfaces = CNCopySupportedInterfaces() as? [String] else {
             return nil
         }
-        var wifiInfo: WiFiInfo? = nil
+        var wifiInfo: WiFiInfo?
         for interface in interfaces {
             guard let interfaceInfo = CNCopyCurrentNetworkInfo(interface as CFString) as NSDictionary? else {
                 return nil
@@ -64,24 +64,40 @@ class WiFiInfoService: NSObject {
 
     //  MARK - WiFi signal strength
     private func getWifiStrength() -> Int? {
+        print("select phone")
         return isiPhoneX() ? getWifiStrengthOnIphoneX() : getWifiStrengthOnDevicesExceptIphoneX()
     }
 
     private func getWifiStrengthOnDevicesExceptIphoneX() -> Int? {
-        var rssi: Int?
-        guard let statusBar = UIApplication.shared.value(forKey: Constants.AppKeys.statusBar.rawValue) as? UIView,
-            let foregroundView = statusBar.value(forKey: Constants.AppKeys.foregroundView.rawValue) as? UIView else {
-            return rssi
-        }
-        for view in foregroundView.subviews {
-           if let statusBarDataNetworkItemView = NSClassFromString("UIStatusBarDataNetworkItemView"), view.isKind(of: statusBarDataNetworkItemView) {
-              if let val = view.value(forKey: Constants.AppKeys.wifiStrengthRaw.rawValue) as? Int {
-                  rssi = val
-                  break
-              }
-           }
-        }
-        return rssi
+        print("Did enter get wifiStrength")
+//        var rssi: Int?
+//        guard let statusBar = UIApplication.shared.value(forKey: Constants.AppKeys.statusBar.rawValue) as? UIView,
+//            let foregroundView = statusBar.value(forKey: Constants.AppKeys.foregroundView.rawValue) as? UIView
+//        else {
+//            return rssi
+//        }
+//        for view in foregroundView.subviews {
+//           if let statusBarDataNetworkItemView = NSClassFromString("UIStatusBarDataNetworkItemView"), view.isKind(of: statusBarDataNetworkItemView) {
+//              if let val = view.value(forKey: Constants.AppKeys.wifiStrengthRaw.rawValue) as? Int {
+//                  rssi = val
+//                  break
+//              }
+//           }
+//        }
+//        return rssi
+        if let statusBarManager = UIApplication.shared.keyWindow?.windowScene?.statusBarManager,
+                    let localStatusBar = statusBarManager.value(forKey: "createLocalStatusBar") as? NSObject,
+                    let statusBar = localStatusBar.value(forKey: "statusBar") as? NSObject,
+                    let _statusBar = statusBar.value(forKey: "_statusBar") as? UIView,
+                    let currentData = _statusBar.value(forKey: "currentData")  as? NSObject,
+                    let celluar = currentData.value(forKey: "cellularEntry") as? NSObject,
+                    let signalStrength = celluar.value(forKey: "displayValue") as? Int {
+                    print(Int(signalStrength))
+                    return Int(signalStrength)
+                } else {
+                    print("return 0")
+                    return 0
+            }
     }
 
     private func getWifiStrengthOnIphoneX() -> Int? {

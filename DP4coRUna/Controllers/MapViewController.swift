@@ -74,19 +74,32 @@ class MapViewController: UIViewController{
           locationManager.requestWhenInUseAuthorization()
       //      updateWiFi()
             let info = service.getWiFiInfo()
-            self.ssid.text = info?.rssi
+            if let sid = info?.rssi{
+                self.ssid.text = sid
+                print("here1")
+            }else{
+                print("Nothing in 1")
+            }
         } else if CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.requestAlwaysAuthorization()
             let info = service.getWiFiInfo()
-            self.ssid.text = info?.rssi
+            if let sid = info?.rssi{
+                self.ssid.text = sid
+                print("here2")
+            }else{
+                print("Nothing in 2")
+            }
         } else{
           locationManager.requestLocation()
           locationManager.startUpdatingLocation()
        //   updateWiFi()
             let info = service.getWiFiInfo()
-            self.ssid.text = info?.rssi
-            print(info?.rssi)
-            print("this is ssid")
+            if let sid = info?.rssi{
+                self.ssid.text = sid
+                print(sid)
+                print("this is ssid")
+            }
+            print("here3")
         }
     }
     
