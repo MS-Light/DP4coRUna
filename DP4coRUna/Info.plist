@@ -22,12 +22,22 @@
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Use Bluetooth</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Get Bluetooth info around you</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>motion</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Gather location updates to get SSID information</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string> gather location update to get ssid </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Gather location updates to get SSID information</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Need</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -49,6 +59,14 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>location</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -63,8 +81,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Get Bluetooth info around you</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
