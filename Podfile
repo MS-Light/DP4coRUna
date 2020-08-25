@@ -17,4 +17,6 @@ target 'DP4coRUna' do
     # Pods for testing
   end
 
+  pod 'NotificationBannerSwift', '~>3.0.0'
+
 end
