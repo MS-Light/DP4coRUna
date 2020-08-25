@@ -6,7 +6,7 @@
 //  Copyright © 2020 Massachusetts Institute of Technology. All rights reserved.
 //
 
-import UIKit
+import UIKit    // User Interface Kit
 
 class DetectorViewController: UIViewController {
     
