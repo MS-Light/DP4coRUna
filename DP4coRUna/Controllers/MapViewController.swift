@@ -20,7 +20,7 @@ class MapViewController: UIViewController{
     
     private let locationManager = CLLocationManager()
     private var currentPlace: CLPlacemark?
-    let service = WiFiInfoService()
+
     
     
     /*
@@ -41,7 +41,8 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         attemptLocationAccess()
-       
+        let a = fetchSSIDInfo()
+        print ("SSID: \(Date()): \(a)")
        
     }
 /*
@@ -62,6 +63,27 @@ class MapViewController: UIViewController{
         }
     }*/
     
+    private func fetchSSIDInfo() -> String {
+            guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
+                return "NO-INTERFACE"
+            }
+            return interfaceNames.compactMap { name in
+                guard let info = CNCopyCurrentNetworkInfo(name as CFString) as? [String:AnyObject] else {
+                    print("Error: CNcopycurrentnetwork not working!!!!!")
+                    return nil
+                }
+                guard let ssid = info[kCNNetworkInfoKeySSID as String] as? String else {
+                    return nil
+                }
+                return ssid
+                }
+                .filter({ (ssid) -> Bool in
+                    !ssid.isEmpty
+                    }
+                )
+                .first ?? "NONE"
+        }
+    
     private func attemptLocationAccess() {
         guard CLLocationManager.locationServicesEnabled() else {
           return
@@ -73,33 +95,16 @@ class MapViewController: UIViewController{
         if CLLocationManager.authorizationStatus() == .notDetermined {
           locationManager.requestWhenInUseAuthorization()
       //      updateWiFi()
-            let info = service.getWiFiInfo()
-            if let sid = info?.rssi{
-                self.ssid.text = sid
-                print("here1")
-            }else{
-                print("Nothing in 1")
-            }
+            
         } else if CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.requestAlwaysAuthorization()
-            let info = service.getWiFiInfo()
-            if let sid = info?.rssi{
-                self.ssid.text = sid
-                print("here2")
-            }else{
-                print("Nothing in 2")
-            }
+           
+            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
         } else{
           locationManager.requestLocation()
           locationManager.startUpdatingLocation()
-       //   updateWiFi()
-            let info = service.getWiFiInfo()
-            if let sid = info?.rssi{
-                self.ssid.text = sid
-                print(sid)
-                print("this is ssid")
-            }
-            print("here3")
+       
         }
     }
     
