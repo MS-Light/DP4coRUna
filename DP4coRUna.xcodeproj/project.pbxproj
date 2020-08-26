@@ -14,6 +14,8 @@
 		912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AA24E4E28E006D6A5B /* PlaceInfo.swift */; };
 		912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */; };
 		912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */; };
+		913D796924F6400400FC0949 /* BluetoothDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D796824F6400400FC0949 /* BluetoothDataController.swift */; };
+		913D796B24F6404C00FC0949 /* BluetoothDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */; };
 		9147673C24E2EB5D00658554 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673B24E2EB5D00658554 /* Category.swift */; };
 		9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673D24E2EC1F00658554 /* DataSourceController.swift */; };
 		9147674024E2EF1B00658554 /* SignalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673F24E2EF1B00658554 /* SignalDetail.swift */; };
@@ -77,6 +79,8 @@
 		912157AA24E4E28E006D6A5B /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
 		912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoController.swift; sourceTree = "<group>"; };
 		912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailController.swift; sourceTree = "<group>"; };
+		913D796824F6400400FC0949 /* BluetoothDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDataController.swift; sourceTree = "<group>"; };
+		913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDetailController.swift; sourceTree = "<group>"; };
 		9147673B24E2EB5D00658554 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9147673D24E2EC1F00658554 /* DataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceController.swift; sourceTree = "<group>"; };
 		9147673F24E2EF1B00658554 /* SignalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalDetail.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */,
 				918502BF24F0722F0062665F /* SettingsController.swift */,
 				8831028824F1E3CF0002B04F /* NotificationController.swift */,
+				913D796824F6400400FC0949 /* BluetoothDataController.swift */,
+				913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				91C557F124D25926009EA97F /* MapViewController.swift in Sources */,
 				918502BA24F0680A0062665F /* LoggerViewController.swift in Sources */,
 				91F941A224EF276200F70EE1 /* WiFiInfoService.swift in Sources */,
+				913D796B24F6404C00FC0949 /* BluetoothDetailController.swift in Sources */,
 				918502B324F067800062665F /* Sensors.swift in Sources */,
 				918502BE24F06DE10062665F /* DetectorSettingsViewController.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
@@ -542,6 +549,7 @@
 				918502B424F067800062665F /* Logger.swift in Sources */,
 				9147673C24E2EB5D00658554 /* Category.swift in Sources */,
 				912157A924E4E1B4006D6A5B /* PlaceDetail.swift in Sources */,
+				913D796924F6400400FC0949 /* BluetoothDataController.swift in Sources */,
 				9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */,
 				912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */,
 				918502C424F07B9D0062665F /* LoggerSetting.swift in Sources */,

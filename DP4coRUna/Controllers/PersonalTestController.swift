@@ -55,6 +55,8 @@ class PersonalTestController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             performSegue(withIdentifier: K.wifiDelegate, sender: self)
+        }else if indexPath.row == 1{
+            performSegue(withIdentifier: K.gotoBluetoothData, sender: self)
         }else if indexPath.row == 2{
             performSegue(withIdentifier: K.placeInfo, sender: self)
         }else if indexPath.row == 3{

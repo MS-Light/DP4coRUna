@@ -23,5 +23,7 @@ struct K{
     static let switches = "goToSwitches"
     static let logger = "goToLogger"
     static let detector = "goToDetector"
+    static let gotoBluetoothData = "gotoBluetoothData"
+    static let gotoBluetoothDetail = "gotoBluetoothDetail"
 
 }

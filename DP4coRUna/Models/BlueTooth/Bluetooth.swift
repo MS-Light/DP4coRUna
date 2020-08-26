@@ -12,12 +12,13 @@ import RealmSwift
 
 class Bluetooth: Object{
     @objc dynamic var UUID: String = ""
+    @objc dynamic var timePoint: String = ""
     let details = List<BluetoothDetail>()
 }
 class BluetoothDetail: Object{
   //  @objc dynamic var UUID: String = ""
     @objc dynamic var timePoint: String = ""
-    @objc dynamic var RSSI: NSNumber?
+    @objc dynamic var RSSI: String = ""
     @objc dynamic var advName: String = ""
     @objc dynamic var advPower: Double = 0.0
     @objc dynamic var advTime: Double = 0.0
@@ -288,24 +289,28 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
             let data = BluetoothDetail()
 //            data.UUID = uuid
             data.timePoint = Logger.getTimestamp()
-            data.RSSI = RSSI
+            data.RSSI = RSSI.stringValue
             data.advName = advName
             data.advPower = advPower
             data.advTime = advTime
+            let currentTime = Logger.getTimestamp()
             do {
                 try realm.write {
-                    if let info = bluetooth?.filter("tag == %@", uuid){
+                    if let info = bluetooth?.filter("UUID == %@", uuid){
                         if info.count > 0{
+                            info[0].timePoint = currentTime
                             info[0].details.append(data)
                         }else{
                             let newCategory = Bluetooth()
                             newCategory.UUID = uuid
+                            newCategory.timePoint = currentTime
                             newCategory.details.append(data)
                             realm.add(newCategory)
                         }
                     }else{
                         let newCategory = Bluetooth()
                         newCategory.UUID = uuid
+                        newCategory.timePoint = currentTime
                         newCategory.details.append(data)
                         realm.add(newCategory)
                     }
