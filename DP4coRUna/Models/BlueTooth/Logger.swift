@@ -43,7 +43,7 @@ class Logger {
     func createNewLog() {
         
         // Create the log file with its name as a timestamp
-        var timeStamp = getTimestamp()
+        var timeStamp = Logger.getTimestamp()
         timeStamp = timeStamp.replacingOccurrences(of: " ", with: "_")
         timeStamp = timeStamp.replacingOccurrences(of: ":", with: ".")
         fileName = "log_" + timeStamp + ".txt"
@@ -75,7 +75,7 @@ class Logger {
     }
     
     // Gets timestamp
-    func getTimestamp() -> String {
+    static func getTimestamp() -> String {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
@@ -86,7 +86,7 @@ class Logger {
     func write(_ data: String) {
         
         // Add timestamp
-        let dataWithTimestamp = getTimestamp() + "," + data
+        let dataWithTimestamp = Logger.getTimestamp() + "," + data
         
         // Print to console for debugging
         #if DEBUG

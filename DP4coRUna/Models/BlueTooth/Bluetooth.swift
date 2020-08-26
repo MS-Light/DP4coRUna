@@ -8,6 +8,21 @@
 
 import UIKit
 import CoreBluetooth
+import RealmSwift
+
+class Bluetooth: Object{
+    @objc dynamic var UUID: String = ""
+    let details = List<BluetoothDetail>()
+}
+class BluetoothDetail: Object{
+  //  @objc dynamic var UUID: String = ""
+    @objc dynamic var timePoint: String = ""
+    @objc dynamic var RSSI: NSNumber?
+    @objc dynamic var advName: String = ""
+    @objc dynamic var advPower: Double = 0.0
+    @objc dynamic var advTime: Double = 0.0
+    var partent = LinkingObjects(fromType: Bluetooth.self, property: "details")
+}
 
 // Advertiser - broadcasts signals
 class BluetoothAdvertiser: NSObject, CBPeripheralManagerDelegate {
@@ -82,6 +97,7 @@ class BluetoothAdvertiser: NSObject, CBPeripheralManagerDelegate {
 
 // Scanner - receives advertisements and logs data
 class BluetoothScanner: NSObject, CBCentralManagerDelegate {
+    let realm = try! Realm()
     
     // Objects
     var logger: Logger!
@@ -266,7 +282,38 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
         
         // Write to log if enabled
         if logToFile {
+            var bluetooth : Results<Bluetooth>?
+            bluetooth = realm.objects(Bluetooth.self)
             let s = "Bluetooth," + uuid + ",\(RSSI)" + "," + advName + ",\(advPower)" + ",\(advTime)"
+            let data = BluetoothDetail()
+//            data.UUID = uuid
+            data.timePoint = Logger.getTimestamp()
+            data.RSSI = RSSI
+            data.advName = advName
+            data.advPower = advPower
+            data.advTime = advTime
+            do {
+                try realm.write {
+                    if let info = bluetooth?.filter("tag == %@", uuid){
+                        if info.count > 0{
+                            info[0].details.append(data)
+                        }else{
+                            let newCategory = Bluetooth()
+                            newCategory.UUID = uuid
+                            newCategory.details.append(data)
+                            realm.add(newCategory)
+                        }
+                    }else{
+                        let newCategory = Bluetooth()
+                        newCategory.UUID = uuid
+                        newCategory.details.append(data)
+                        realm.add(newCategory)
+                    }
+                }
+            } catch {
+                print("Error saving category \(error)")
+            }
+            
             logger.write(s)
         }
         

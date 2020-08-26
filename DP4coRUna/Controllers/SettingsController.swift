@@ -14,6 +14,37 @@ class SettingsController: UIViewController {
 
     }
     
+    @IBAction func notificationPressed(_ sender: UIButton) {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options:[.alert, .sound])
+            { (granted, error) in
+            
+            }
+        
+        // Step2 : Create the notification content
+        let content = UNMutableNotificationContent()
+        content.title = "DP4coRUna - You might have been exposed"
+        content.body = "Go take a Covid Test Soon"
+        
+        // Step3: Create the notification trigger
+        let date = Date().addingTimeInterval(5) // The notification will pop after 5 seconds running.
+        
+        let dateComponents = Calendar.current.dateComponents([.year,.month, .day, .hour, .minute, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        //Step 4:  Create the request
+        
+        let uuidString = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuidString, content: content , trigger: trigger)
+        
+        
+        //Step 5:  Register the request
+        center.add(request) { (error) in
+            }
+    }
     @IBAction func functionButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.switches, sender: self)
     }

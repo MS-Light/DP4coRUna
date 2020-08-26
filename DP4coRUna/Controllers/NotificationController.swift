@@ -27,7 +27,7 @@ class NotificationController: UIViewController{
         content.body = "Go take a Covid Test Soon"
         
         // Step3: Create the notification trigger
-        let date = Date().addingTimeInterval(5) // The notification will pop after 5 seconds running.
+        let date = Date().addingTimeInterval(1) // The notification will pop after 5 seconds running.
         
         let dateComponents = Calendar.current.dateComponents([.year,.month, .day, .hour, .minute, .second], from: date)
         
