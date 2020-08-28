@@ -64,5 +64,6 @@ extension BluetoothDetailController: UISearchBarDelegate{
                 searchBar.resignFirstResponder()
             }
         }
+
     }
 }
