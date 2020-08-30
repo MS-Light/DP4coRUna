@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import CoreBluetooth
+import os
 
 class SettingsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
+    @IBAction func bluetoothonPressed(_ sender:UIButton) {
+        
+    }
     @IBAction func notificationPressed(_ sender: UIButton) {
         let center = UNUserNotificationCenter.current()
         

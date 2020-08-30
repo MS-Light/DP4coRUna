@@ -385,10 +385,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-R3-Kll">
-                                <rect key="frame" x="20" y="326" width="374" height="244"/>
+                                <rect key="frame" x="20" y="166" width="374" height="564"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-7x-GFJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Notification"/>
+                                        <connections>
+                                            <action selector="notificationPressed:" destination="DHx-up-sBm" eventType="touchUpInside" id="L7n-6j-iXA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brc-at-66F">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Bluetooth Scan"/>
+                                        <connections>
+                                            <action selector="bluetoothonPressed:" destination="DHx-up-sBm" eventType="touchUpInside" id="jGf-fS-KxC"/>
+                                            <segue destination="rY1-KE-el7" kind="presentation" id="1vR-qU-96s"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-0r-rbO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
+                                        <rect key="frame" x="0.0" y="320" width="374" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Function Setting"/>
                                         <connections>
@@ -396,7 +413,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-gQ-w5J">
-                                        <rect key="frame" x="0.0" y="172" width="374" height="72"/>
+                                        <rect key="frame" x="0.0" y="492" width="374" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Detector Setting"/>
                                         <connections>
@@ -405,14 +422,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-7x-GFJ">
-                                <rect key="frame" x="121" y="197" width="173" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Notification"/>
-                                <connections>
-                                    <action selector="notificationPressed:" destination="DHx-up-sBm" eventType="touchUpInside" id="L7n-6j-iXA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RLh-je-yHs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -431,6 +440,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwt-Di-OcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-572.46376811594212" y="942.85714285714278"/>
+        </scene>
+        <!--Central View Controller-->
+        <scene sceneID="2ng-gB-fs5">
+            <objects>
+                <viewController id="rY1-KE-el7" customClass="CentralViewController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zLk-RB-iKx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-qS-QdD">
+                                <rect key="frame" x="248" y="208" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="rY1-KE-el7" eventType="valueChanged" id="4s6-Bg-mhm"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTA-Dy-usq">
+                                <rect key="frame" x="94" y="203" width="123" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dhY-nG-8a8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="advertisingSwitch" destination="9aX-qS-QdD" id="Ak5-zU-XUl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cL8-ju-aIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-571.01449275362324" y="1664.7321428571429"/>
         </scene>
         <!--Function Setting-->
         <scene sceneID="lpm-dw-tb1">
@@ -1732,8 +1775,8 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FMD-pM-G3T"/>
-        <segue reference="O47-48-LhJ"/>
+        <segue reference="tpE-NJ-F2W"/>
+        <segue reference="Tqw-Ze-HaQ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tab_Detector" width="30" height="30"/>

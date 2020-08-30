@@ -14,6 +14,8 @@
 		912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AA24E4E28E006D6A5B /* PlaceInfo.swift */; };
 		912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */; };
 		912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */; };
+		913BF73C24F88D3200906C8A /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913BF73924F88D3200906C8A /* CentralViewController.swift */; };
+		913BF73D24F88D3200906C8A /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913BF73A24F88D3200906C8A /* TransferService.swift */; };
 		913D796924F6400400FC0949 /* BluetoothDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D796824F6400400FC0949 /* BluetoothDataController.swift */; };
 		913D796B24F6404C00FC0949 /* BluetoothDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */; };
 		9147673C24E2EB5D00658554 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147673B24E2EB5D00658554 /* Category.swift */; };
@@ -79,6 +81,8 @@
 		912157AA24E4E28E006D6A5B /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
 		912157AC24E4E77D006D6A5B /* PlaceInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoController.swift; sourceTree = "<group>"; };
 		912157AE24E4E7E5006D6A5B /* PlaceDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailController.swift; sourceTree = "<group>"; };
+		913BF73924F88D3200906C8A /* CentralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
+		913BF73A24F88D3200906C8A /* TransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
 		913D796824F6400400FC0949 /* BluetoothDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDataController.swift; sourceTree = "<group>"; };
 		913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDetailController.swift; sourceTree = "<group>"; };
 		9147673B24E2EB5D00658554 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		918502AE24F067240062665F /* BlueTooth */ = {
 			isa = PBXGroup;
 			children = (
+				913BF73A24F88D3200906C8A /* TransferService.swift */,
 				918502B224F067800062665F /* Bluetooth.swift */,
 				918502B124F067800062665F /* Helpers.swift */,
 				918502B024F067800062665F /* Logger.swift */,
@@ -280,6 +285,7 @@
 				8831028824F1E3CF0002B04F /* NotificationController.swift */,
 				913D796824F6400400FC0949 /* BluetoothDataController.swift */,
 				913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */,
+				913BF73924F88D3200906C8A /* CentralViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -531,12 +537,14 @@
 				91F941A224EF276200F70EE1 /* WiFiInfoService.swift in Sources */,
 				913D796B24F6404C00FC0949 /* BluetoothDetailController.swift in Sources */,
 				918502B324F067800062665F /* Sensors.swift in Sources */,
+				913BF73D24F88D3200906C8A /* TransferService.swift in Sources */,
 				918502BE24F06DE10062665F /* DetectorSettingsViewController.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
 				918502BC24F06CF30062665F /* ultrasonicData.swift in Sources */,
 				912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */,
 				918502C224F079230062665F /* DetectorViewController.swift in Sources */,
 				8831028924F1E3CF0002B04F /* NotificationController.swift in Sources */,
+				913BF73C24F88D3200906C8A /* CentralViewController.swift in Sources */,
 				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
