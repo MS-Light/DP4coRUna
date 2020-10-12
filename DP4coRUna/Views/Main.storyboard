@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -156,6 +156,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="Kf1-LD-Xbg" kind="relationship" relationship="viewControllers" id="FT0-8W-qMW"/>
                         <segue destination="0b2-7C-HxA" kind="relationship" relationship="viewControllers" id="1Sx-Hj-G4o"/>
                         <segue destination="h7H-GY-a6X" kind="relationship" relationship="viewControllers" id="NGd-0n-GPM"/>
                         <segue destination="uil-Q7-Opc" kind="relationship" relationship="viewControllers" id="2Qv-ND-vwm"/>
@@ -163,7 +164,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWK-wk-U9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="-678"/>
+            <point key="canvasLocation" x="-232" y="-678"/>
         </scene>
         <!--Notify Others-->
         <scene sceneID="ih6-XT-uAh">
@@ -180,7 +181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OO-ra-vaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="-678"/>
+            <point key="canvasLocation" x="409" y="-678"/>
         </scene>
         <!--Personal Test Controller-->
         <scene sceneID="6e6-uE-HBg">
@@ -1773,17 +1774,78 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
             </objects>
             <point key="canvasLocation" x="5143" y="-1428"/>
         </scene>
+        <!--Start-->
+        <scene sceneID="3dl-bl-lta">
+            <objects>
+                <viewController id="nx6-t4-ZoG" customClass="StartViewController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="KPN-BP-6Xi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-HX-hmz">
+                                <rect key="frame" x="261" y="655" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sickSwitch:" destination="nx6-t4-ZoG" eventType="valueChanged" id="AVd-xO-L5y"/>
+                                    <action selector="switchChanged:" destination="rY1-KE-el7" eventType="valueChanged" id="9QN-LY-vmh"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
+                                <rect key="frame" x="107" y="650" width="123" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOE-gK-xAO">
+                                <rect key="frame" x="57" y="232.5" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start" backgroundImage="circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="ysF-lm-Qub"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TMC-62-xDV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Start" id="SYi-SB-UzL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5G6-gm-Ank" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2131" y="540"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="Z4V-cI-2bW">
+            <objects>
+                <navigationController id="Kf1-LD-Xbg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Start" image="power" catalog="system" id="Y9I-yc-qlr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xNQ-7z-sw5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nx6-t4-ZoG" kind="relationship" relationship="rootViewController" id="cwr-lf-GEd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prd-Yp-nTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1088" y="31"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="tpE-NJ-F2W"/>
-        <segue reference="Tqw-Ze-HaQ"/>
+        <segue reference="O47-48-LhJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tab_Detector" width="30" height="30"/>
         <image name="Tab_Logger" width="30" height="30"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="power" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -356,6 +356,8 @@ extension CentralViewController: CBPeripheralDelegate {
             // we don't know which thread this method will be called back on.
             
             text = String(data: self.data, encoding: .utf8)
+            //MARK: - We need Notification
+            print(text!)
             let center = UNUserNotificationCenter.current()
             center.requestAuthorization(options:[.alert, .sound]){ (granted, error) in}
             // Step2 : Create the notification content

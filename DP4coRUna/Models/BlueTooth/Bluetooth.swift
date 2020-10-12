@@ -110,6 +110,7 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
     var localName: String!
     var isRunning: Bool!
     var proxRSSICount: Int!
+    var covidCount: Int!
     var otherRSSICount: Int!
     var logToFile: Bool!
     var runDetector: Bool!
@@ -153,6 +154,7 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
         // Initialize
         proxRSSICount = 0
         otherRSSICount = 0
+        covidCount = 0
         logToFile = false
         runDetector = false
         runUltrasonic = false
@@ -268,6 +270,8 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
                 advName = j as! String
                 if advName == localName {
                     proxRSSICount += 1
+                }else if (advName == "on"){
+                    covidCount += 1
                 }
             } else if i == "kCBAdvDataTxPowerLevel" {
                 advPower = j as! Double
@@ -444,6 +448,7 @@ class BluetoothScanner: NSObject, CBCentralManagerDelegate {
     func resetRSSICounts() {
         proxRSSICount = 0
         otherRSSICount = 0
+        covidCount = 0
     }
     
 }
