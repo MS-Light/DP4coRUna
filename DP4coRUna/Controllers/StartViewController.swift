@@ -141,7 +141,6 @@ class StartViewController: UIViewController {
         scanner.logToFile = true
         scanner.startScanForAll()
         scanner.resetRSSICounts()
-        startUpdatingRSSICounts()
         
         // Override screen auto-lock, so it will stay on
         UIApplication.shared.isIdleTimerDisabled = true
@@ -190,9 +189,6 @@ class StartViewController: UIViewController {
         isRunning = false
     }
     var rsssiTimer: Timer?
-    func startUpdatingRSSICounts() {
-        rsssiTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateRSSICounts), userInfo: nil, repeats: true)
-    }
     func stopUpdatingRSSICounts() {
         rsssiTimer?.invalidate()
         rsssiTimer = nil
@@ -241,9 +237,6 @@ class StartViewController: UIViewController {
         } else {
             willEnterForeground()
         }
-    }
-    @objc func updateRSSICounts() {
-
     }
     /*
     // MARK: - Navigation
