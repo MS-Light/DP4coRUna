@@ -1811,6 +1811,9 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Start" id="SYi-SB-UzL"/>
+                    <connections>
+                        <outlet property="startButtonOutlet" destination="SOE-gK-xAO" id="bQz-cf-UJP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G6-gm-Ank" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
