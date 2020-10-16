@@ -8,6 +8,9 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import Firebase
+import FirebaseFirestore
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -74,18 +77,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(
-      _ application: UIApplication,
-      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-    ) {
-      let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-      let token = tokenParts.joined()
-      print("Device Token: \(token)")
-    }
+          _ application: UIApplication,
+          didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+        ) {
+          let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+          let token = tokenParts.joined()
+          let db = Firestore.firestore()
+            // Add a new document with a generated ID
+            var ref: DocumentReference? = nil
+            ref = db.collection("users").addDocument(data: [
+                "token":token
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+          print("Device Token: \(token)")
+        }
 
-    func application(
-      _ application: UIApplication,
-      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-      print("Failed to register: \(error)")
+        func application(
+          _ application: UIApplication,
+          didFailToRegisterForRemoteNotificationsWithError error: Error) {
+          print("Failed to register: \(error)")
+        }
     }
-}
 

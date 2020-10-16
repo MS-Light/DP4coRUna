@@ -7,6 +7,10 @@ target 'DP4coRUna' do
   pod 'RealmSwift'
   pod 'SwipeCellKit'
   # Pods for DP4coRUna
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 
   target 'DP4coRUnaTests' do
     inherit! :search_paths

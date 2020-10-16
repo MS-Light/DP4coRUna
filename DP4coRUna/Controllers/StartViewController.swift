@@ -88,8 +88,6 @@ class StartViewController: UIViewController {
         isRunning = false
 
     }
-    @IBAction func sickSwitch(_ sender: UISwitch) {
-    }
     @IBAction func startButtonPressed(_ sender: UIButton) {
         if startButtonOutlet.title(for: .normal) == "Start"{
             if haveInitialLog {
