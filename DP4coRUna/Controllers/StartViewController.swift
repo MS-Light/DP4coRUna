@@ -10,6 +10,7 @@ import RealmSwift
 
 class StartViewController: UIViewController {
     @IBOutlet weak var startButtonOutlet: UIButton!
+    @IBOutlet weak var Notify: UIButton!
     @IBOutlet weak var sickSwitchOutlet: UISwitch!
     var itemArray = [SaveOptions]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("SaveOptions.plist")
@@ -38,13 +39,13 @@ class StartViewController: UIViewController {
             print("\(error)")
         }
     }
-    
+
     @IBAction func sickSwitchAction(_ sender: UISwitch) {
         itemArray[9].switchedON = !itemArray[9].switchedON
         sickSwitchOutlet.isOn = itemArray[9].switchedON
     }
-    
-    
+
+
     // Objects from the AppDelegate
     var logger: Logger!
     var sensors: Sensors!
@@ -55,7 +56,7 @@ class StartViewController: UIViewController {
     var haveInitialLog: Bool!
     var range: Int!
     var angle: Int!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,12 +67,12 @@ class StartViewController: UIViewController {
         sensors = delegate.sensors
         advertiser = delegate.advertiser
         scanner = delegate.scanner
-        
+
         // Notifications for when app transitions between background and foreground
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        
+
         // Notification when proximity sensor is activated
         // (required since the app does not go into the background!)
         let device = UIDevice.current
@@ -79,7 +80,7 @@ class StartViewController: UIViewController {
         if device.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
-        
+
         // Initial states
         firstRun = true
         haveInitialLog = false
@@ -88,10 +89,39 @@ class StartViewController: UIViewController {
         isRunning = false
 
     }
+
+    //button to notify
+    @IBAction func notify(_ sender: UIButton) {
+        // prepare json data
+        NSLog("Start notify")
+        let json: [String: Any] = ["title": "ABC",
+                                   "dict": ["1":"First", "2":"Second"]]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://192.168.0.174:5000")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // insert json data to the request
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        task.resume()
+    }
+
+    @IBAction func sickSwitch(_ sender: UISwitch) {
+    }
     @IBAction func startButtonPressed(_ sender: UIButton) {
         if startButtonOutlet.title(for: .normal) == "Start"{
             if haveInitialLog {
-                
+
                 // Warn before deleting old log
                 let alert = UIAlertController(title: "Warning", message: "Creating a new log will delete the old log. To avoid losing data, make sure the old log has been sent off of this device before continuing.", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
@@ -102,7 +132,7 @@ class StartViewController: UIViewController {
                     // Nothing to do here
                 }))
                 present(alert, animated: true, completion: nil)
-                
+
             } else {
                 logger.createNewLog()
                 haveInitialLog = true
@@ -126,7 +156,7 @@ class StartViewController: UIViewController {
         }
     }
     func startRun() {
-        
+
         // Make sure Bluetooth is on
         if !advertiser.isOn() || !scanner.isOn() {
             let alert = UIAlertController(title: "Warning", message: "Bluetooth is not on. Please turn it on to continue.", preferredStyle: UIAlertController.Style.alert)
@@ -136,11 +166,11 @@ class StartViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        
+
         // Write range and angle to the log file
         logger.write("Range,\(range!)")
         logger.write("Angle,\(angle!)")
-        
+
         // Start sensors
         if LoggerSettings.gpsEnabled {
             sensors.startGPS()
@@ -163,23 +193,23 @@ class StartViewController: UIViewController {
         if LoggerSettings.pedometerEnabled {
             sensors.startPedometer()
         }
-        
+
         // Start Bluetooth
         advertiser.start()
         scanner.logToFile = true
         scanner.startScanForAll()
         scanner.resetRSSICounts()
-        
+
         // Override screen auto-lock, so it will stay on
         UIApplication.shared.isIdleTimerDisabled = true
-        
+
         // Update state
         isRunning = true
     }
-    
+
     // Stops running
     func stopRun() {
-        
+
         // Stop sensors
         if LoggerSettings.gpsEnabled {
             sensors.stopGPS()
@@ -202,17 +232,17 @@ class StartViewController: UIViewController {
         if LoggerSettings.pedometerEnabled {
             sensors.stopPedometer()
         }
-        
+
         // Stop Bluetooth
         advertiser.stop()
         scanner.logToFile = false
         scanner.stop()
         stopUpdatingRSSICounts()
-        
-        
+
+
         // Restore screen auto-lock
         UIApplication.shared.isIdleTimerDisabled = false
-        
+
         // Update state
         isRunning = false
     }
@@ -224,38 +254,38 @@ class StartViewController: UIViewController {
     //MARK: - objc funcs
     @objc func didEnterBackground() {
         if isRunning {
-            
+
             // Cycle the advertister
             advertiser.stop()
             advertiser.start()
-            
+
             // Scanner can only scan for one service, and must do so in a timed loop
             scanner.stop()
             scanner.startScanForServiceLoop()
-            
+
             // Log the state
             logger.write("AppState,Background")
         }
     }
-    
+
     // When application moves to the foreground, we can restore the original Bluetooth
     // operation
     @objc func willEnterForeground() {
         if isRunning {
-            
+
             // Cycle the advertister
             advertiser.stop()
             advertiser.start()
-            
+
             // Switch scanner from one service to everything
             scanner.stopScanForServiceLoop()
             scanner.startScanForAll()
-            
+
             // Log the state
             logger.write("AppState,Foreground")
         }
     }
-    
+
     // Called when the proximity sensor is activated
     // If it's on, go into background mode, otherwise, come into foreground mode
     @objc func proximityChanged(notification: NSNotification) {

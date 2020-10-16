@@ -7,6 +7,7 @@ target 'DP4coRUna' do
   pod 'RealmSwift'
   pod 'SwipeCellKit'
   # Pods for DP4coRUna
+
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Firestore'

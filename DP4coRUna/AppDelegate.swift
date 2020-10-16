@@ -34,12 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Error initialising new realm, \(error)")
         }
-        
+
         // register for notifications
+        FirebaseApp.configure()
         registerForPushNotifications()
         return true
     }
-    
+
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -53,49 +54,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
+
     func registerForPushNotifications() {
         UNUserNotificationCenter.current()
           .requestAuthorization(options: [.alert, .sound, .badge]) {
             [weak self] granted, error in
-              
+
             print("Permission granted: \(granted)")
             guard granted else { return }
             self?.getNotificationSettings()
         }
     }
-    
+
     func getNotificationSettings() {
       UNUserNotificationCenter.current().getNotificationSettings { settings in
         print("Notification settings: \(settings)")
-        
+
         guard settings.authorizationStatus == .authorized else { return }
         DispatchQueue.main.async {
           UIApplication.shared.registerForRemoteNotifications()
         }
       }
     }
-    
+
     func application(
-          _ application: UIApplication,
-          didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-        ) {
-          let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-          let token = tokenParts.joined()
-          let db = Firestore.firestore()
-            // Add a new document with a generated ID
-            var ref: DocumentReference? = nil
-            ref = db.collection("users").addDocument(data: [
-                "token":token
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
+      _ application: UIApplication,
+      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+      let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+      let token = tokenParts.joined()
+      let db = Firestore.firestore()
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "token":token
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
             }
-          print("Device Token: \(token)")
         }
+      print("Device Token: \(token)")
+    }
 
         func application(
           _ application: UIApplication,
@@ -103,4 +104,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           print("Failed to register: \(error)")
         }
     }
-
