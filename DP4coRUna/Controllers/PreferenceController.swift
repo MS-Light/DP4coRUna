@@ -52,6 +52,10 @@ class PerferenceController: UITableViewController {
         newItem9.tableCell = "Proximity"
         itemArray.append(newItem9)
         
+        let newItem10 = SaveOptions()
+        newItem10.tableCell = "RUsick"
+        itemArray.append(newItem10)
+        
         
         
         loadItems()

@@ -1787,6 +1787,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sickSwitch:" destination="nx6-t4-ZoG" eventType="valueChanged" id="AVd-xO-L5y"/>
+                                    <action selector="sickSwitchAction:" destination="nx6-t4-ZoG" eventType="valueChanged" id="ZGk-gS-dej"/>
                                     <action selector="switchChanged:" destination="rY1-KE-el7" eventType="valueChanged" id="9QN-LY-vmh"/>
                                 </connections>
                             </switch>
@@ -1812,6 +1813,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                     </view>
                     <navigationItem key="navigationItem" title="Start" id="SYi-SB-UzL"/>
                     <connections>
+                        <outlet property="sickSwitchOutlet" destination="Wds-HX-hmz" id="i8t-br-xcy"/>
                         <outlet property="startButtonOutlet" destination="SOE-gK-xAO" id="bQz-cf-UJP"/>
                     </connections>
                 </viewController>

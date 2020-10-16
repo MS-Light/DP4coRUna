@@ -15,4 +15,5 @@ struct LoggerSettings {
     static var compassEnabled = false
     static var altimeterEnabled = false
     static var pedometerEnabled = false
+    static var RUsick = false
 }

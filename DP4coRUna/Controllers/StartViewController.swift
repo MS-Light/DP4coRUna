@@ -9,12 +9,41 @@ import UIKit
 import RealmSwift
 
 class StartViewController: UIViewController {
+    @IBOutlet weak var startButtonOutlet: UIButton!
+    @IBOutlet weak var sickSwitchOutlet: UISwitch!
     var itemArray = [SaveOptions]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("SaveOptions.plist")
     // Make status bar light
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do{
+                itemArray = try decoder.decode([SaveOptions].self, from: data)
+            }catch{
+                print("Decoding error \(error)")
+            }
+            LoggerSettings.RUsick = itemArray[9].switchedON
+            sickSwitchOutlet.isOn = itemArray[9].switchedON
+        }
+    }
+    func saveItems(){
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }catch{
+            print("\(error)")
+        }
+    }
+    
+    @IBAction func sickSwitchAction(_ sender: UISwitch) {
+        itemArray[9].switchedON = !itemArray[9].switchedON
+        sickSwitchOutlet.isOn = itemArray[9].switchedON
+    }
+    
     
     // Objects from the AppDelegate
     var logger: Logger!
@@ -27,9 +56,10 @@ class StartViewController: UIViewController {
     var range: Int!
     var angle: Int!
     
-    @IBOutlet weak var startButtonOutlet: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
         // Get objects from the AppDelegate
         let delegate = UIApplication.shared.delegate as! AppDelegate
         logger = delegate.logger
