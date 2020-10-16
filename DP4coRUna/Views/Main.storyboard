@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -630,13 +630,13 @@
                                         <rect key="frame" x="0.0" y="474" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKZ-u6-C95">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7h1-hS-Z7u" userLabel="Place Nave Text Field">
-                                                <rect key="frame" x="114.5" y="0.0" width="259.5" height="34"/>
+                                                <rect key="frame" x="115" y="0.0" width="259" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1791,7 +1791,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <action selector="switchChanged:" destination="rY1-KE-el7" eventType="valueChanged" id="9QN-LY-vmh"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
                                 <rect key="frame" x="107" y="650" width="123" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1807,12 +1807,21 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <action selector="startButtonPressed:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="ysF-lm-Qub"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3H-Gk-YHI">
+                                <rect key="frame" x="152" y="590" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Notify others"/>
+                                <connections>
+                                    <action selector="notify:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="IXu-ZB-Eyp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TMC-62-xDV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Start" id="SYi-SB-UzL"/>
                     <connections>
+                        <outlet property="Notify" destination="F3H-Gk-YHI" id="ayO-c8-pXK"/>
                         <outlet property="sickSwitchOutlet" destination="Wds-HX-hmz" id="i8t-br-xcy"/>
                         <outlet property="startButtonOutlet" destination="SOE-gK-xAO" id="bQz-cf-UJP"/>
                     </connections>
@@ -1840,7 +1849,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tpE-NJ-F2W"/>
+        <segue reference="FMD-pM-G3T"/>
         <segue reference="O47-48-LhJ"/>
     </inferredMetricsTieBreakers>
     <resources>

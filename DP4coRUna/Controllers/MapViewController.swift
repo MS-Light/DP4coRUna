@@ -140,7 +140,7 @@ extension MapViewController: CLLocationManagerDelegate {
           return
       }
       self.currentPlace = firstPlace
-        self.TextField.text = firstPlace.abbreviation
+        self.TextField.text = firstPlace.compactAddress
        
     }
     let center = CLLocationCoordinate2D(latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
@@ -211,3 +211,36 @@ struct NetworkInfo {
     var bssid: String?
 }
 */
+extension CLPlacemark {
+
+    var compactAddress: String? {
+        if let name = name {
+            var result = name
+            
+            if let street_no = subThoroughfare{
+                result += ", \(street_no)"
+            }
+            
+            if let street = thoroughfare {
+                result += ", \(street)"
+            }
+
+            if let city = locality {
+                result += ", \(city)"
+            }
+            
+            if let state = administrativeArea {
+                result += ", \(state)"
+            }
+            
+            if let country = country {
+                result += ", \(country)"
+            }
+
+            return result
+        }
+
+        return nil
+    }
+
+}

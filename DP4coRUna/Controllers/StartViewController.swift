@@ -10,6 +10,7 @@ import RealmSwift
 
 class StartViewController: UIViewController {
     @IBOutlet weak var startButtonOutlet: UIButton!
+    @IBOutlet weak var Notify: UIButton!
     @IBOutlet weak var sickSwitchOutlet: UISwitch!
     var itemArray = [SaveOptions]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("SaveOptions.plist")
@@ -88,6 +89,33 @@ class StartViewController: UIViewController {
         isRunning = false
 
     }
+    
+    //button to notify
+    @IBAction func notify(_ sender: UIButton) {
+        // prepare json data
+        NSLog("Start notify")
+        let json: [String: Any] = ["title": "ABC",
+                                   "dict": ["1":"First", "2":"Second"]]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://192.168.0.174:5000")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // insert json data to the request
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        task.resume()
+    }
+    
     @IBAction func sickSwitch(_ sender: UISwitch) {
     }
     @IBAction func startButtonPressed(_ sender: UIButton) {
