@@ -24,6 +24,7 @@
 		9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674124E2F0F700658554 /* SwipeTableViewController.swift */; };
 		9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674324E2F1A200658554 /* WiFiSourceController.swift */; };
 		9147E7F22533B53F00F4E115 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147E7F12533B53F00F4E115 /* StartViewController.swift */; };
+		9171970B253A5ADA00A7B787 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */; };
 		918502B324F067800062665F /* Sensors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502AF24F067800062665F /* Sensors.swift */; };
 		918502B424F067800062665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B024F067800062665F /* Logger.swift */; };
 		918502B524F067800062665F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B124F067800062665F /* Helpers.swift */; };
@@ -36,6 +37,7 @@
 		918502C424F07B9D0062665F /* LoggerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502C324F07B9D0062665F /* LoggerSetting.swift */; };
 		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
 		91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADD24DB6D320035F9FE /* SaveOptions.swift */; };
+		91BB279F25421B92000FA620 /* GoogleMapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB279E25421B92000FA620 /* GoogleMapsController.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
 		91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EE24D25926009EA97F /* SceneDelegate.swift */; };
 		91C557F124D25926009EA97F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* MapViewController.swift */; };
@@ -92,6 +94,7 @@
 		9147674124E2F0F700658554 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9147674324E2F1A200658554 /* WiFiSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSourceController.swift; sourceTree = "<group>"; };
 		9147E7F12533B53F00F4E115 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		918502AF24F067800062665F /* Sensors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensors.swift; sourceTree = "<group>"; };
 		918502B024F067800062665F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		918502B124F067800062665F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		918502C324F07B9D0062665F /* LoggerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerSetting.swift; sourceTree = "<group>"; };
 		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		91A13ADD24DB6D320035F9FE /* SaveOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOptions.swift; sourceTree = "<group>"; };
+		91BB279E25421B92000FA620 /* GoogleMapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsController.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C557EC24D25926009EA97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C557EE24D25926009EA97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		91C557EB24D25926009EA97F /* DP4coRUna */ = {
 			isa = PBXGroup;
 			children = (
+				9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */,
 				91C5581F24D2598E009EA97F /* Controllers */,
 				91C5581E24D25987009EA97F /* Views */,
 				91C5581C24D25977009EA97F /* Models */,
@@ -289,6 +294,7 @@
 				913D796A24F6404C00FC0949 /* BluetoothDetailController.swift */,
 				913BF73924F88D3200906C8A /* CentralViewController.swift */,
 				9147E7F12533B53F00F4E115 /* StartViewController.swift */,
+				91BB279E25421B92000FA620 /* GoogleMapsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				91C557E624D25926009EA97F /* Frameworks */,
 				91C557E724D25926009EA97F /* Resources */,
 				83B420287CB5291B2F796B58 /* [CP] Embed Pods Frameworks */,
+				798806087022C5FE278C2E13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,6 +350,7 @@
 				91C5580724D25927009EA97F /* Frameworks */,
 				91C5580824D25927009EA97F /* Resources */,
 				715A68F970C952152585E11B /* [CP] Embed Pods Frameworks */,
+				BE652379480185230170671A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9104404824EFA7FE004B5620 /* Main.storyboard in Resources */,
+				9171970B253A5ADA00A7B787 /* GoogleService-Info.plist in Resources */,
 				91C557F924D25927009EA97F /* LaunchScreen.storyboard in Resources */,
 				91C557F624D25927009EA97F /* Assets.xcassets in Resources */,
 			);
@@ -507,6 +516,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		798806087022C5FE278C2E13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna/Pods-DP4coRUna-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna/Pods-DP4coRUna-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna/Pods-DP4coRUna-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		83B420287CB5291B2F796B58 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,6 +548,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna/Pods-DP4coRUna-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE652379480185230170671A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -553,6 +596,7 @@
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
 				912157A724E4DA80006D6A5B /* AddPlaceInfoController.swift in Sources */,
 				91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */,
+				91BB279F25421B92000FA620 /* GoogleMapsController.swift in Sources */,
 				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
 				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
 				912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */,

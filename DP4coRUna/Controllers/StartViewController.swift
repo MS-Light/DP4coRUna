@@ -41,8 +41,10 @@ class StartViewController: UIViewController {
     }
 
     @IBAction func sickSwitchAction(_ sender: UISwitch) {
+        loadItems()
         itemArray[9].switchedON = !itemArray[9].switchedON
         sickSwitchOutlet.isOn = itemArray[9].switchedON
+        saveItems()
     }
 
 

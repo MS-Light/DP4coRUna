@@ -11,6 +11,7 @@ import UserNotifications
 import Firebase
 import FirebaseFirestore
 import FirebaseMessaging
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error initialising new realm, \(error)")
         }
 
+        GMSServices.provideAPIKey("AIzaSyBgV1egm6aPj5F2eL8BEoALj-CS79QKhQI")
         // register for notifications
         FirebaseApp.configure()
         registerForPushNotifications()

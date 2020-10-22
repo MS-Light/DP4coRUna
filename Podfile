@@ -12,6 +12,10 @@ target 'DP4coRUna' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
 
   target 'DP4coRUnaTests' do
     inherit! :search_paths
