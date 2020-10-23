@@ -12,6 +12,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseMessaging
 import GoogleMaps
+import GooglePlaces
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         GMSServices.provideAPIKey("AIzaSyBgV1egm6aPj5F2eL8BEoALj-CS79QKhQI")
+        GMSPlacesClient.provideAPIKey("AIzaSyBgV1egm6aPj5F2eL8BEoALj-CS79QKhQI")
         // register for notifications
         FirebaseApp.configure()
         registerForPushNotifications()
