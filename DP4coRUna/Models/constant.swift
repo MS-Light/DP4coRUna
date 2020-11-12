@@ -25,5 +25,7 @@ struct K{
     static let detector = "goToDetector"
     static let gotoBluetoothData = "gotoBluetoothData"
     static let gotoBluetoothDetail = "gotoBluetoothDetail"
-
+    
+    static let MapDirection: String = "https://maps.googleapis.com/maps/api/directions/json?"
+    static let apiKey: String = "AIzaSyAVNAC9MF3dCTaMv51UBUcFbr87njo4NGk"
 }

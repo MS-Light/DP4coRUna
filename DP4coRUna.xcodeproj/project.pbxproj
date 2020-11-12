@@ -24,8 +24,15 @@
 		9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674124E2F0F700658554 /* SwipeTableViewController.swift */; };
 		9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674324E2F1A200658554 /* WiFiSourceController.swift */; };
 		9147E7F22533B53F00F4E115 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147E7F12533B53F00F4E115 /* StartViewController.swift */; };
-		915FADA3254337B20020C298 /* GoogleMapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915FADA2254337B20020C298 /* GoogleMapsController.swift */; };
 		915FADA8254337C30020C298 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915FADA7254337C30020C298 /* Data.swift */; };
+		9167DC0A255DE7FB00902489 /* DirectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC07255DE7FB00902489 /* DirectionModel.swift */; };
+		9167DC0B255DE7FB00902489 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC08255DE7FB00902489 /* DirectionData.swift */; };
+		9167DC0C255DE7FB00902489 /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC09255DE7FB00902489 /* DirectionManager.swift */; };
+		9167DC15255DE8E300902489 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC11255DE8E300902489 /* Server.swift */; };
+		9167DC16255DE8E300902489 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC12255DE8E300902489 /* ServerConnection.swift */; };
+		9167DC17255DE8E300902489 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC13255DE8E300902489 /* Client.swift */; };
+		9167DC18255DE8E300902489 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC14255DE8E300902489 /* ClientConnection.swift */; };
+		9167DC4D255DEDE500902489 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167DC4C255DEDE500902489 /* GoogleMapViewController.swift */; };
 		9171970B253A5ADA00A7B787 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */; };
 		918502B324F067800062665F /* Sensors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502AF24F067800062665F /* Sensors.swift */; };
 		918502B424F067800062665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502B024F067800062665F /* Logger.swift */; };
@@ -95,8 +102,15 @@
 		9147674124E2F0F700658554 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9147674324E2F1A200658554 /* WiFiSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSourceController.swift; sourceTree = "<group>"; };
 		9147E7F12533B53F00F4E115 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		915FADA2254337B20020C298 /* GoogleMapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsController.swift; sourceTree = "<group>"; };
 		915FADA7254337C30020C298 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9167DC07255DE7FB00902489 /* DirectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionModel.swift; sourceTree = "<group>"; };
+		9167DC08255DE7FB00902489 /* DirectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
+		9167DC09255DE7FB00902489 /* DirectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionManager.swift; sourceTree = "<group>"; };
+		9167DC11255DE8E300902489 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		9167DC12255DE8E300902489 /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		9167DC13255DE8E300902489 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		9167DC14255DE8E300902489 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConnection.swift; sourceTree = "<group>"; };
+		9167DC4C255DEDE500902489 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		918502AF24F067800062665F /* Sensors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensors.swift; sourceTree = "<group>"; };
 		918502B024F067800062665F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -182,6 +196,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9167DC1C255DE8E700902489 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				9167DC13255DE8E300902489 /* Client.swift */,
+				9167DC14255DE8E300902489 /* ClientConnection.swift */,
+				9167DC11255DE8E300902489 /* Server.swift */,
+				9167DC12255DE8E300902489 /* ServerConnection.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		9167DC1D255DE8FD00902489 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				9167DC08255DE7FB00902489 /* DirectionData.swift */,
+				9167DC09255DE7FB00902489 /* DirectionManager.swift */,
+				9167DC07255DE7FB00902489 /* DirectionModel.swift */,
+				915FADA7254337C30020C298 /* Data.swift */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		9167DC1E255DE93C00902489 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9147673B24E2EB5D00658554 /* Category.swift */,
+				9147673F24E2EF1B00658554 /* SignalDetail.swift */,
+				912157A824E4E1B4006D6A5B /* PlaceDetail.swift */,
+				912157AA24E4E28E006D6A5B /* PlaceInfo.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		918502AE24F067240062665F /* BlueTooth */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,15 +302,13 @@
 		91C5581C24D25977009EA97F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				915FADA7254337C30020C298 /* Data.swift */,
+				9167DC1E255DE93C00902489 /* Realm */,
+				9167DC1D255DE8FD00902489 /* GoogleMap */,
+				9167DC1C255DE8E700902489 /* Socket */,
 				918502AE24F067240062665F /* BlueTooth */,
 				91F941A124EF276200F70EE1 /* WiFiInfoService.swift */,
 				91A13ADB24DB58B90035F9FE /* constant.swift */,
 				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
-				9147673B24E2EB5D00658554 /* Category.swift */,
-				9147673F24E2EF1B00658554 /* SignalDetail.swift */,
-				912157A824E4E1B4006D6A5B /* PlaceDetail.swift */,
-				912157AA24E4E28E006D6A5B /* PlaceInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,7 +324,7 @@
 		91C5581F24D2598E009EA97F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				915FADA2254337B20020C298 /* GoogleMapsController.swift */,
+				9167DC4C255DEDE500902489 /* GoogleMapViewController.swift */,
 				918502C124F079230062665F /* DetectorViewController.swift */,
 				918502BD24F06DE10062665F /* DetectorSettingsViewController.swift */,
 				918502B824F0680A0062665F /* LoggerViewController.swift */,
@@ -585,9 +630,12 @@
 				918502BA24F0680A0062665F /* LoggerViewController.swift in Sources */,
 				91F941A224EF276200F70EE1 /* WiFiInfoService.swift in Sources */,
 				913D796B24F6404C00FC0949 /* BluetoothDetailController.swift in Sources */,
+				9167DC17255DE8E300902489 /* Client.swift in Sources */,
+				9167DC0A255DE7FB00902489 /* DirectionModel.swift in Sources */,
 				918502B324F067800062665F /* Sensors.swift in Sources */,
 				913BF73D24F88D3200906C8A /* TransferService.swift in Sources */,
 				918502BE24F06DE10062665F /* DetectorSettingsViewController.swift in Sources */,
+				9167DC4D255DEDE500902489 /* GoogleMapViewController.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
 				918502BC24F06CF30062665F /* ultrasonicData.swift in Sources */,
 				912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */,
@@ -602,13 +650,17 @@
 				91C5582324D2A0F9009EA97F /* PreferenceController.swift in Sources */,
 				915FADA8254337C30020C298 /* Data.swift in Sources */,
 				91C5582124D2A0D7009EA97F /* PersonalTestController.swift in Sources */,
+				9167DC0C255DE7FB00902489 /* DirectionManager.swift in Sources */,
 				912157AD24E4E77D006D6A5B /* PlaceInfoController.swift in Sources */,
 				9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */,
 				918502B424F067800062665F /* Logger.swift in Sources */,
+				9167DC15255DE8E300902489 /* Server.swift in Sources */,
 				9147E7F22533B53F00F4E115 /* StartViewController.swift in Sources */,
 				9147673C24E2EB5D00658554 /* Category.swift in Sources */,
-				915FADA3254337B20020C298 /* GoogleMapsController.swift in Sources */,
+				9167DC0B255DE7FB00902489 /* DirectionData.swift in Sources */,
 				912157A924E4E1B4006D6A5B /* PlaceDetail.swift in Sources */,
+				9167DC16255DE8E300902489 /* ServerConnection.swift in Sources */,
+				9167DC18255DE8E300902489 /* ClientConnection.swift in Sources */,
 				913D796924F6400400FC0949 /* BluetoothDataController.swift in Sources */,
 				9147673E24E2EC1F00658554 /* DataSourceController.swift in Sources */,
 				912157AF24E4E7E5006D6A5B /* PlaceDetailController.swift in Sources */,
