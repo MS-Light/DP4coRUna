@@ -10,7 +10,8 @@ import CoreBluetooth
 import os
 
 class SettingsController: UIViewController {
-
+    let client = Client(host:"192.168.1.152" , port: 80)
+    let server = Server(port: 80)
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -53,6 +54,27 @@ class SettingsController: UIViewController {
     }
     @IBAction func detectorButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.detectorSettings, sender: self)
+    }
+    @IBAction func Startclient(_ sender: Any) {
+        DispatchQueue.global().async {
+            self.client.start()
+            let data = Data("There's a device next to you!".utf8)
+            self.client.connection.send(data: data)
+        }
+    }
+    
+    @IBAction func Stopclient(_ sender: Any) {
+        client.stop()
+    }
+    
+    @IBAction func Startserver(_ sender: Any) {
+        DispatchQueue.global().async {
+            try! self.server.start()
+        }
+    }
+
+    @IBAction func Sropserver(_ sender: Any) {
+        server.stop()
     }
     
 }

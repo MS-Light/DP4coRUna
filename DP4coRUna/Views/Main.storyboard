@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKl-9V-4gQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -176,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sTr-av-QEE" kind="relationship" relationship="rootViewController" id="OEt-IG-IvE"/>
+                        <segue destination="cv8-Zi-wpN" kind="relationship" relationship="rootViewController" id="O5J-Fy-Old"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OO-ra-vaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,7 +235,7 @@
             <objects>
                 <tableViewController id="HPn-De-Bjp" customClass="DataSourceController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wVa-AI-bL4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -273,7 +273,7 @@
             <objects>
                 <tableViewController id="Fku-Jf-Lyt" customClass="WiFiSourceController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LJn-ee-rI2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ufK-ht-Bw7">
@@ -348,7 +348,7 @@
             <objects>
                 <navigationController id="h7H-GY-a6X" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="tcs-Ja-H2D"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cwJ-LW-SSV">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cwJ-LW-SSV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -385,11 +385,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-R3-Kll">
-                                <rect key="frame" x="20" y="166" width="374" height="564"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-R3-Kll">
+                                <rect key="frame" x="20" y="186" width="374" height="524"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QZ-Eg-xMo">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <state key="normal" title="Start Server"/>
+                                        <connections>
+                                            <action selector="Startserver:" destination="DHx-up-sBm" eventType="touchUpInside" id="Gn7-az-dGo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tD-gN-cOh">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="30"/>
+                                        <state key="normal" title="Stop Client "/>
+                                        <connections>
+                                            <action selector="Stopclient:" destination="DHx-up-sBm" eventType="touchUpInside" id="FaT-U8-hi1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFz-dH-vip">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="30"/>
+                                        <state key="normal" title="Stop Server"/>
+                                        <connections>
+                                            <action selector="Sropserver:" destination="DHx-up-sBm" eventType="touchUpInside" id="NRC-eA-IGV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-et-oLp">
+                                        <rect key="frame" x="0.0" y="150" width="374" height="30"/>
+                                        <state key="normal" title="Start Client"/>
+                                        <connections>
+                                            <action selector="Startclient:" destination="DHx-up-sBm" eventType="touchUpInside" id="1Gm-IP-bHX"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-7x-GFJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="200" width="374" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Notification"/>
                                         <connections>
@@ -397,7 +425,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brc-at-66F">
-                                        <rect key="frame" x="0.0" y="160" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="280" width="374" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Bluetooth Scan"/>
                                         <connections>
@@ -406,7 +434,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-0r-rbO">
-                                        <rect key="frame" x="0.0" y="320" width="374" height="72"/>
+                                        <rect key="frame" x="0.0" y="360" width="374" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Function Setting"/>
                                         <connections>
@@ -414,7 +442,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-gQ-w5J">
-                                        <rect key="frame" x="0.0" y="492" width="374" height="72"/>
+                                        <rect key="frame" x="0.0" y="452" width="374" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Detector Setting"/>
                                         <connections>
@@ -519,11 +547,11 @@
             <objects>
                 <viewController id="nee-Qf-j3c" customClass="AddPlaceInfoController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6z-Af-ING">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="XJa-3G-e8n">
-                                <rect key="frame" x="20" y="108" width="374" height="587"/>
+                                <rect key="frame" x="20" y="20" width="374" height="587"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PoV-cz-dCf">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -713,7 +741,7 @@
             <objects>
                 <tableViewController id="nf7-S6-skT" customClass="PlaceInfoController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u3D-xi-ckK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -745,7 +773,7 @@
             <objects>
                 <tableViewController id="RKH-K9-hdD" customClass="PlaceDetailController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uWj-zZ-l3w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -974,7 +1002,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-AW-MiS">
-                                <rect key="frame" x="139" y="251" width="135" height="29"/>
+                                <rect key="frame" x="140" y="251" width="134" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -998,7 +1026,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-t5-PgD">
-                                <rect key="frame" x="30" y="251" width="94" height="32"/>
+                                <rect key="frame" x="30" y="251" width="95" height="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="rangeStepperChanged:" destination="cv8-Zi-wpN" eventType="valueChanged" id="0DR-N0-Ugf"/>
@@ -1081,9 +1109,8 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <action selector="sendLogButtonPressed:" destination="cv8-Zi-wpN" eventType="touchUpInside" id="x0Z-Vd-B1f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVk-g6-W0L">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVk-g6-W0L">
                                 <rect key="frame" x="103" y="615" width="194" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1097,12 +1124,25 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <action selector="detectorButtonTouched:" destination="cv8-Zi-wpN" eventType="touchUpInside" id="LI1-pK-S54"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnt-ho-xzz" userLabel="BluetoothData">
+                                <rect key="frame" x="107" y="706" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vaT-Ee-Fgo"/>
+                                    <constraint firstAttribute="width" constant="200" id="yOo-PS-9Fm"/>
+                                </constraints>
+                                <state key="normal" title="Bluetooth Data"/>
+                                <connections>
+                                    <segue destination="JDH-7u-Ciu" kind="show" id="M0W-2K-IJ5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0O7-eO-cNa"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NFC-t5-PgD" firstAttribute="top" secondItem="1ej-YL-gg0" secondAttribute="bottom" constant="20" id="1VA-LI-trl"/>
                             <constraint firstItem="hdN-AW-MiS" firstAttribute="top" secondItem="1ej-YL-gg0" secondAttribute="bottom" constant="20" id="1mN-jK-Nbv"/>
+                            <constraint firstItem="FVk-g6-W0L" firstAttribute="leading" secondItem="0TW-wb-q1Y" secondAttribute="leading" id="2DM-D1-Qaj"/>
+                            <constraint firstItem="Gnt-ho-xzz" firstAttribute="centerX" secondItem="lQo-Kq-wI8" secondAttribute="centerX" id="2VK-8F-abh"/>
                             <constraint firstItem="0O7-eO-cNa" firstAttribute="trailing" secondItem="NWZ-XM-l9f" secondAttribute="trailing" constant="35" id="3jQ-rd-jrm"/>
                             <constraint firstItem="Ryw-ve-1c4" firstAttribute="leading" secondItem="0O7-eO-cNa" secondAttribute="leading" constant="110" id="7il-76-VcT"/>
                             <constraint firstItem="LOk-fd-2w4" firstAttribute="leading" secondItem="TPN-u0-kwE" secondAttribute="trailing" constant="15" id="7ol-Ub-UTB"/>
@@ -1111,12 +1151,15 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                             <constraint firstItem="XIh-1O-Y4X" firstAttribute="top" secondItem="d6k-B9-jJk" secondAttribute="bottom" constant="5" id="Fou-YV-7PD"/>
                             <constraint firstItem="Ryw-ve-1c4" firstAttribute="top" secondItem="LOk-fd-2w4" secondAttribute="bottom" constant="30" id="G7f-SL-LG4"/>
                             <constraint firstItem="tHt-c5-LRT" firstAttribute="leading" secondItem="0O7-eO-cNa" secondAttribute="leading" constant="60" id="GfI-CE-6L6"/>
+                            <constraint firstItem="0O7-eO-cNa" firstAttribute="trailing" secondItem="FVk-g6-W0L" secondAttribute="trailing" constant="117" id="KY8-hO-dJD"/>
                             <constraint firstItem="d6k-B9-jJk" firstAttribute="top" secondItem="Ryw-ve-1c4" secondAttribute="bottom" constant="20" id="Lah-cd-tkK"/>
                             <constraint firstItem="3Do-pi-mOa" firstAttribute="leading" secondItem="hdN-AW-MiS" secondAttribute="trailing" constant="20" id="ONI-2j-bFj"/>
                             <constraint firstItem="NWZ-XM-l9f" firstAttribute="top" secondItem="3Do-pi-mOa" secondAttribute="bottom" constant="25" id="QQd-Vz-Kzq"/>
                             <constraint firstItem="0O7-eO-cNa" firstAttribute="trailing" secondItem="Ryw-ve-1c4" secondAttribute="trailing" constant="110" id="RVt-jK-1aT"/>
+                            <constraint firstItem="Gnt-ho-xzz" firstAttribute="centerX" secondItem="hdN-AW-MiS" secondAttribute="centerX" id="Rh4-ZL-OhM"/>
                             <constraint firstItem="bYA-KG-a6b" firstAttribute="top" secondItem="5uP-uL-peA" secondAttribute="bottom" constant="20" id="UgN-Sv-hug"/>
                             <constraint firstItem="0TW-wb-q1Y" firstAttribute="top" secondItem="0O7-eO-cNa" secondAttribute="top" constant="20" id="UtI-8o-khn"/>
+                            <constraint firstItem="0O7-eO-cNa" firstAttribute="bottom" secondItem="Gnt-ho-xzz" secondAttribute="bottom" constant="57" id="W4W-6E-m33"/>
                             <constraint firstItem="Kgd-xB-UPJ" firstAttribute="top" secondItem="Ryw-ve-1c4" secondAttribute="bottom" constant="20" id="W67-LO-Moc"/>
                             <constraint firstItem="1ej-YL-gg0" firstAttribute="centerX" secondItem="0O7-eO-cNa" secondAttribute="centerX" id="WgE-NC-udP"/>
                             <constraint firstItem="0TW-wb-q1Y" firstAttribute="leading" secondItem="0O7-eO-cNa" secondAttribute="leading" constant="103" id="Yxv-LE-M6m"/>
@@ -1140,6 +1183,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                             <constraint firstItem="1ej-YL-gg0" firstAttribute="top" secondItem="7jg-jk-WPf" secondAttribute="bottom" constant="20" id="vIR-7w-bTB"/>
                             <constraint firstItem="LOk-fd-2w4" firstAttribute="top" secondItem="hdN-AW-MiS" secondAttribute="bottom" constant="25" id="x2u-rq-1pE"/>
                             <constraint firstItem="0O7-eO-cNa" firstAttribute="trailing" secondItem="bYA-KG-a6b" secondAttribute="trailing" constant="90" id="xBW-17-XmP"/>
+                            <constraint firstItem="FVk-g6-W0L" firstAttribute="top" secondItem="bYA-KG-a6b" secondAttribute="bottom" constant="50" id="xCz-44-Qzg"/>
                             <constraint firstItem="TPN-u0-kwE" firstAttribute="leading" secondItem="0O7-eO-cNa" secondAttribute="leading" constant="30" id="y3l-Th-3aO"/>
                         </constraints>
                     </view>
@@ -1857,17 +1901,17 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtR-1c-xJq" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="495"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="435"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-b0-maR">
-                                        <rect key="frame" x="186.5" y="515" width="41.5" height="0.0"/>
+                                        <rect key="frame" x="186.5" y="455" width="41.5" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-e7-vwb">
-                                        <rect key="frame" x="20" y="535" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="475" width="374" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-hb-APa">
                                                 <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
@@ -1898,34 +1942,23 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBZ-Z4-kMj">
-                                        <rect key="frame" x="168" y="595" width="78" height="0.0"/>
-                                        <state key="normal" title="Start Client"/>
-                                        <connections>
-                                            <action selector="Startclient:" destination="JKF-uk-2zK" eventType="touchUpInside" id="Ysd-EB-phf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSE-CM-FpF">
-                                        <rect key="frame" x="167" y="615" width="80" height="0.0"/>
-                                        <state key="normal" title="Stop Client "/>
-                                        <connections>
-                                            <action selector="Stopclient:" destination="JKF-uk-2zK" eventType="touchUpInside" id="H2O-1b-WAG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgu-TW-TVb">
-                                        <rect key="frame" x="165.5" y="635" width="83" height="0.0"/>
-                                        <state key="normal" title="Start Server"/>
-                                        <connections>
-                                            <action selector="Startserver:" destination="JKF-uk-2zK" eventType="touchUpInside" id="UZQ-NU-OI7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yim-3p-UUn">
-                                        <rect key="frame" x="166.5" y="655" width="81" height="0.0"/>
-                                        <state key="normal" title="Stop Server"/>
-                                        <connections>
-                                            <action selector="Sropserver:" destination="JKF-uk-2zK" eventType="touchUpInside" id="45F-2J-1Sm"/>
-                                        </connections>
-                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-z6-7NP">
+                                        <rect key="frame" x="20" y="535" width="374" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="xDB-9l-CgB"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PQM-n9-D6O">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQM-n9-D6O" id="P4p-EH-lmf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="142" translatesAutoresizingMaskIntoConstraints="NO" id="NEM-BW-xzh">
                                         <rect key="frame" x="73.5" y="675" width="267" height="30"/>
                                         <subviews>
@@ -1950,7 +1983,9 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <constraint firstItem="aCH-b0-maR" firstAttribute="centerX" secondItem="J6C-DH-tQz" secondAttribute="centerX" id="3NC-AG-TtO"/>
                                     <constraint firstItem="vtR-1c-xJq" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" id="ED6-ez-Fdk"/>
                                     <constraint firstAttribute="trailing" secondItem="vtR-1c-xJq" secondAttribute="trailing" id="RAG-8q-ORq"/>
+                                    <constraint firstItem="Hbe-z6-7NP" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" constant="20" id="VRm-J0-snv"/>
                                     <constraint firstAttribute="trailing" secondItem="DPy-e7-vwb" secondAttribute="trailing" constant="20" id="WfC-Sn-n5r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hbe-z6-7NP" secondAttribute="trailing" constant="20" id="lcQ-AN-qav"/>
                                     <constraint firstItem="vtR-1c-xJq" firstAttribute="top" secondItem="J6C-DH-tQz" secondAttribute="top" id="srr-Ql-78x"/>
                                     <constraint firstItem="DPy-e7-vwb" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" constant="20" id="uoe-Qg-m3l"/>
                                 </constraints>
@@ -1967,11 +2002,6 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                     </view>
                     <navigationItem key="navigationItem" id="Di2-1v-KbE">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0eM-ey-Y9E">
-                            <rect key="frame" x="184" y="7" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                        </button>
                     </navigationItem>
                     <connections>
                         <outlet property="Map" destination="vtR-1c-xJq" id="Mfs-iD-dUH"/>
@@ -1985,8 +2015,10 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FMD-pM-G3T"/>
-        <segue reference="O47-48-LhJ"/>
+        <segue reference="O5J-Fy-Old"/>
+        <segue reference="tpE-NJ-F2W"/>
+        <segue reference="Tqw-Ze-HaQ"/>
+        <segue reference="M0W-2K-IJ5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tab_Detector" width="30" height="30"/>

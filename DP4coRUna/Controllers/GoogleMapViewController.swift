@@ -27,29 +27,6 @@ class GoogleMapViewController: UIViewController {
     @IBOutlet weak var Map: GMSMapView!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var destinationTextField: UITextField!
-    let client = Client(host:"192.168.0.126" , port: 80)
-    let server = Server(port: 80)
-    @IBAction func Startclient(_ sender: Any) {
-        DispatchQueue.global().async {
-            self.client.start()
-            let data = Data("hi".utf8)
-            self.client.connection.send(data: data)
-        }
-    }
-    
-    @IBAction func Stopclient(_ sender: Any) {
-        client.stop()
-    }
-    
-    @IBAction func Startserver(_ sender: Any) {
-        DispatchQueue.global().async {
-            try! self.server.start()
-        }
-    }
-
-    @IBAction func Sropserver(_ sender: Any) {
-        server.stop()
-    }
     
     //record current position
     @IBAction func record(_ sender: Any) {
@@ -112,8 +89,6 @@ class GoogleMapViewController: UIViewController {
     */
     
     
-    
-    
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
@@ -129,6 +104,8 @@ class GoogleMapViewController: UIViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        Map.isMyLocationEnabled = true
+        Map.settings.myLocationButton = true
         Map.delegate = self
         directionManager.delegate = self
         destinationTextField.delegate = self
