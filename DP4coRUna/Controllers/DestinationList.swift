@@ -12,10 +12,11 @@ class DestinationList: SwipeTableViewController{
     
     var destinationCell: Results<DirectionList1>?
     let realm = try! Realm()
-
+    var destinationtext: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
         tableView.separatorStyle = .none
     }
 
@@ -40,7 +41,8 @@ class DestinationList: SwipeTableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let item = destinationCell?[indexPath.row] {
-           //write it to the type bar
+            destinationtext = item.direction
+            self.performSegue(withIdentifier: "sendbackDestination", sender: self)
         }
         
         tableView.reloadData()
@@ -48,7 +50,8 @@ class DestinationList: SwipeTableViewController{
     }
     //Mark - Model Manipulation Methods
     func loadItems() {
-        destinationCell = realm.objects(DirectionList1.self).sorted(byKeyPath: "time", ascending: true)
+        destinationCell = realm.objects(DirectionList1.self)
+            //.sorted(byKeyPath: "time", ascending: true)
         tableView.reloadData()
     }
     
@@ -60,6 +63,14 @@ class DestinationList: SwipeTableViewController{
                 }
             } catch {
                 print("Error deleting item, \(error)")
+            }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendbackDestination"{
+            let destinationVC = segue.destination as! GoogleMapViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.destinationTextField.text = destinationCell?[indexPath.row].direction
             }
         }
     }
