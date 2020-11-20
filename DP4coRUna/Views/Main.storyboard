@@ -1889,6 +1889,34 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
             </objects>
             <point key="canvasLocation" x="-1088" y="31"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="51L-yM-kHR">
+            <objects>
+                <tableViewController id="abr-gg-Zit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Idh-Uo-m6j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wj9-fQ-8nV">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wj9-fQ-8nV" id="U9A-DH-rMd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="abr-gg-Zit" id="dVp-Va-ZZC"/>
+                            <outlet property="delegate" destination="abr-gg-Zit" id="sPy-Gl-tjR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxu-gt-0GI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2154" y="-1336"/>
+        </scene>
         <!--Google Map View Controller-->
         <scene sceneID="qmA-0E-gx2">
             <objects>
@@ -1901,17 +1929,17 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtR-1c-xJq" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="435"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="554.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-b0-maR">
-                                        <rect key="frame" x="186.5" y="455" width="41.5" height="0.0"/>
+                                        <rect key="frame" x="186.5" y="574.5" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-e7-vwb">
-                                        <rect key="frame" x="20" y="475" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="615" width="374" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-hb-APa">
                                                 <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
@@ -1942,23 +1970,6 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-z6-7NP">
-                                        <rect key="frame" x="20" y="535" width="374" height="120"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="xDB-9l-CgB"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PQM-n9-D6O">
-                                                <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQM-n9-D6O" id="P4p-EH-lmf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="142" translatesAutoresizingMaskIntoConstraints="NO" id="NEM-BW-xzh">
                                         <rect key="frame" x="73.5" y="675" width="267" height="30"/>
                                         <subviews>
@@ -1974,6 +1985,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                                 <state key="normal" title="Show data"/>
                                                 <connections>
                                                     <action selector="showdata:" destination="JKF-uk-2zK" eventType="touchUpInside" id="5bu-Fd-X3c"/>
+                                                    <segue destination="abr-gg-Zit" kind="presentation" id="w3r-WQ-9WZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1983,9 +1995,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                     <constraint firstItem="aCH-b0-maR" firstAttribute="centerX" secondItem="J6C-DH-tQz" secondAttribute="centerX" id="3NC-AG-TtO"/>
                                     <constraint firstItem="vtR-1c-xJq" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" id="ED6-ez-Fdk"/>
                                     <constraint firstAttribute="trailing" secondItem="vtR-1c-xJq" secondAttribute="trailing" id="RAG-8q-ORq"/>
-                                    <constraint firstItem="Hbe-z6-7NP" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" constant="20" id="VRm-J0-snv"/>
                                     <constraint firstAttribute="trailing" secondItem="DPy-e7-vwb" secondAttribute="trailing" constant="20" id="WfC-Sn-n5r"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hbe-z6-7NP" secondAttribute="trailing" constant="20" id="lcQ-AN-qav"/>
                                     <constraint firstItem="vtR-1c-xJq" firstAttribute="top" secondItem="J6C-DH-tQz" secondAttribute="top" id="srr-Ql-78x"/>
                                     <constraint firstItem="DPy-e7-vwb" firstAttribute="leading" secondItem="J6C-DH-tQz" secondAttribute="leading" constant="20" id="uoe-Qg-m3l"/>
                                 </constraints>

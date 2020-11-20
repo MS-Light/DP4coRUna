@@ -59,6 +59,7 @@ class GoogleMapViewController: UIViewController {
             //marker.icon = self.imageWithImage(image: UIImage(named: "virus.png")!, scaledToSize: CGSize(width: 30.0, height: 30.0))
           }
     }
+
     /*
     func echoService(client: TCPClient) {
         print("Newclient from:\(client.address)[\(client.port)]")
@@ -228,7 +229,13 @@ extension GoogleMapViewController: UITextFieldDelegate{
         let geocoder = CLGeocoder()
          
         if let destination = destinationTextField.text{
-            print("hi")
+            let direction = DirectionList1()
+            direction.direction = destination
+            direction.time = NSTimeIntervalSince1970;
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(direction)
+            }
             geocoder.geocodeAddressString(destination){(place, error) in
                 if error == nil{
                     if let myplace = place?[0]{
