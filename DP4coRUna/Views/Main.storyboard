@@ -166,17 +166,17 @@
             </objects>
             <point key="canvasLocation" x="-232" y="-678"/>
         </scene>
-        <!--Notify Others-->
+        <!--Other Devices-->
         <scene sceneID="ih6-XT-uAh">
             <objects>
                 <navigationController id="0b2-7C-HxA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notify Others" image="person" catalog="system" id="veW-v0-2Kv"/>
+                    <tabBarItem key="tabBarItem" title="Other Devices" image="person" catalog="system" id="veW-v0-2Kv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Khs-Pg-r1F">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cv8-Zi-wpN" kind="relationship" relationship="rootViewController" id="O5J-Fy-Old"/>
+                        <segue destination="JDH-7u-Ciu" kind="relationship" relationship="rootViewController" id="FDI-ET-8kI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OO-ra-vaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,7 +228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHv-yO-wsh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="-678"/>
+            <point key="canvasLocation" x="1404" y="-768"/>
         </scene>
         <!--WiFi Data-->
         <scene sceneID="nre-gE-O9T">
@@ -968,11 +968,11 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
             <objects>
                 <viewController id="cv8-Zi-wpN" customClass="LoggerViewController" customModule="DP4coRUna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQo-Kq-wI8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryw-ve-1c4">
-                                <rect key="frame" x="110" y="364" width="194" height="41"/>
+                                <rect key="frame" x="110" y="276" width="194" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -987,7 +987,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jg-jk-WPf">
-                                <rect key="frame" x="50" y="169" width="314" height="41"/>
+                                <rect key="frame" x="50" y="81" width="314" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1002,45 +1002,45 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-AW-MiS">
-                                <rect key="frame" x="140" y="251" width="134" height="29"/>
+                                <rect key="frame" x="140" y="163" width="134" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="feet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Do-pi-mOa">
-                                <rect key="frame" x="294" y="251" width="40" height="29"/>
+                                <rect key="frame" x="294" y="163" width="40" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOk-fd-2w4">
-                                <rect key="frame" x="139" y="305" width="136" height="29"/>
+                                <rect key="frame" x="139" y="217" width="136" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="degrees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWZ-XM-l9f">
-                                <rect key="frame" x="295" y="305" width="84" height="29"/>
+                                <rect key="frame" x="295" y="217" width="84" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-t5-PgD">
-                                <rect key="frame" x="30" y="251" width="95" height="32"/>
+                                <rect key="frame" x="30" y="163" width="95" height="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="rangeStepperChanged:" destination="cv8-Zi-wpN" eventType="valueChanged" id="0DR-N0-Ugf"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="315" stepValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-u0-kwE">
-                                <rect key="frame" x="30" y="308" width="94" height="32"/>
+                                <rect key="frame" x="30" y="220" width="94" height="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="angleStepperChanged:" destination="cv8-Zi-wpN" eventType="valueChanged" id="h7T-3z-oNM"/>
                                 </connections>
                             </stepper>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uP-uL-peA">
-                                <rect key="frame" x="67" y="503" width="280" height="1"/>
+                                <rect key="frame" x="67" y="415" width="280" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="790-8I-r3U"/>
@@ -1048,19 +1048,19 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlueProxTx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgd-xB-UPJ">
-                                <rect key="frame" x="60" y="425" width="112" height="29"/>
+                                <rect key="frame" x="60" y="337" width="112" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHt-c5-LRT">
-                                <rect key="frame" x="60" y="459" width="59" height="29"/>
+                                <rect key="frame" x="60" y="371" width="59" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ej-YL-gg0">
-                                <rect key="frame" x="67" y="230" width="280" height="1"/>
+                                <rect key="frame" x="67" y="142" width="280" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="BhU-qJ-Geb"/>
@@ -1068,19 +1068,19 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6k-B9-jJk">
-                                <rect key="frame" x="183" y="425" width="191" height="29"/>
+                                <rect key="frame" x="183" y="337" width="191" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIh-1O-Y4X">
-                                <rect key="frame" x="182" y="459" width="192" height="29"/>
+                                <rect key="frame" x="182" y="371" width="192" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TW-wb-q1Y">
-                                <rect key="frame" x="103" y="108" width="208" height="41"/>
+                                <rect key="frame" x="103" y="20" width="208" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1095,7 +1095,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-KG-a6b">
-                                <rect key="frame" x="90" y="524" width="234" height="41"/>
+                                <rect key="frame" x="90" y="436" width="234" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1110,7 +1110,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVk-g6-W0L">
-                                <rect key="frame" x="103" y="615" width="194" height="41"/>
+                                <rect key="frame" x="103" y="527" width="194" height="41"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1125,7 +1125,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnt-ho-xzz" userLabel="BluetoothData">
-                                <rect key="frame" x="107" y="706" width="200" height="50"/>
+                                <rect key="frame" x="107" y="701" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vaT-Ee-Fgo"/>
                                     <constraint firstAttribute="width" constant="200" id="yOo-PS-9Fm"/>
@@ -1826,40 +1826,56 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-HX-hmz">
-                                <rect key="frame" x="261" y="655" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="sickSwitchAction:" destination="nx6-t4-ZoG" eventType="valueChanged" id="ZGk-gS-dej"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
-                                <rect key="frame" x="107" y="650" width="123" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOE-gK-xAO">
-                                <rect key="frame" x="57" y="232.5" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start" backgroundImage="circle.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="ysF-lm-Qub"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3H-Gk-YHI">
-                                <rect key="frame" x="152" y="590" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Notify others"/>
-                                <connections>
-                                    <action selector="notify:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="IXu-ZB-Eyp"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="8fi-AP-6hE">
+                                <rect key="frame" x="20" y="188" width="374" height="525"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOE-gK-xAO">
+                                        <rect key="frame" x="12" y="0.5" width="350" height="349"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="NIU-cy-puj"/>
+                                            <constraint firstAttribute="height" constant="350" id="mm0-Ne-aXR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Start" backgroundImage="circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="startButtonPressed:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="ysF-lm-Qub"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3H-Gk-YHI">
+                                        <rect key="frame" x="142" y="393" width="90" height="53"/>
+                                        <state key="normal" title="Notify others"/>
+                                        <connections>
+                                            <action selector="notify:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="IXu-ZB-Eyp"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="hOV-nc-b9q">
+                                        <rect key="frame" x="85.5" y="489" width="203" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-HX-hmz">
+                                                <rect key="frame" x="154" y="0.0" width="51" height="36"/>
+                                                <connections>
+                                                    <action selector="sickSwitchAction:" destination="nx6-t4-ZoG" eventType="valueChanged" id="ZGk-gS-dej"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TMC-62-xDV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8fi-AP-6hE" firstAttribute="leading" secondItem="TMC-62-xDV" secondAttribute="leading" constant="20" id="3u3-Pq-Alx"/>
+                            <constraint firstItem="TMC-62-xDV" firstAttribute="bottom" secondItem="8fi-AP-6hE" secondAttribute="bottom" constant="100" id="A2w-bc-xUI"/>
+                            <constraint firstItem="8fi-AP-6hE" firstAttribute="top" secondItem="TMC-62-xDV" secondAttribute="top" constant="100" id="ATb-8P-Dnd"/>
+                            <constraint firstItem="TMC-62-xDV" firstAttribute="trailing" secondItem="8fi-AP-6hE" secondAttribute="trailing" constant="20" id="mfj-OY-eeG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Start" id="SYi-SB-UzL"/>
                     <connections>
@@ -1889,6 +1905,21 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
             </objects>
             <point key="canvasLocation" x="-1088" y="31"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hTw-nW-ek4">
+            <objects>
+                <viewController id="BYc-tJ-mMM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSs-Ff-Fzh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="soz-0t-xyJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxc-2X-Grr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3991" y="-798"/>
+        </scene>
         <!--Destination List-->
         <scene sceneID="51L-yM-kHR">
             <objects>
@@ -1912,37 +1943,34 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                             <outlet property="delegate" destination="abr-gg-Zit" id="sPy-Gl-tjR"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="JKF-uk-2zK" kind="custom" identifier="sendbackDestination" id="eKV-ZH-EVU"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxu-gt-0GI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2132" y="-1391"/>
+            <point key="canvasLocation" x="-2967" y="-818"/>
         </scene>
         <!--Google Map View Controller-->
         <scene sceneID="qmA-0E-gx2">
             <objects>
                 <viewController id="JKF-uk-2zK" customClass="GoogleMapViewController" customModule="DP4coRUna" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJC-SI-BjU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J6C-DH-tQz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtR-1c-xJq" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="691.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-b0-maR">
-                                        <rect key="frame" x="186.5" y="711.5" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="186.5" y="595" width="41.5" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-e7-vwb">
-                                        <rect key="frame" x="20" y="752" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="615" width="374" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-hb-APa">
                                                 <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
@@ -1974,7 +2002,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="142" translatesAutoresizingMaskIntoConstraints="NO" id="NEM-BW-xzh">
-                                        <rect key="frame" x="73.5" y="812" width="267" height="30"/>
+                                        <rect key="frame" x="73.5" y="675" width="267" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qk-Me-jqk">
                                                 <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
@@ -2028,11 +2056,9 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eKV-ZH-EVU"/>
-        <segue reference="O5J-Fy-Old"/>
         <segue reference="tpE-NJ-F2W"/>
         <segue reference="Tqw-Ze-HaQ"/>
-        <segue reference="M0W-2K-IJ5"/>
+        <segue reference="FDI-ET-8kI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tab_Detector" width="30" height="30"/>

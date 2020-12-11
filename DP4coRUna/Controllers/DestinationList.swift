@@ -42,7 +42,11 @@ class DestinationList: SwipeTableViewController{
         
         if let item = destinationCell?[indexPath.row] {
             destinationtext = item.direction
-            self.performSegue(withIdentifier: "sendbackDestination", sender: self)
+            let vc = GoogleMapViewController()
+            vc.dataRecieved = item.direction
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+ //           self.performSegue(withIdentifier: "sendbackDestination", sender: self)
         }
         
         tableView.reloadData()

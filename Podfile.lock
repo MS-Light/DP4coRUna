@@ -342,6 +342,7 @@ PODS:
     - BoringSSL-GRPC (= 0.0.7)
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
+  - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22)
   - MarqueeLabel (4.0.2)
   - nanopb (1.30906.0):
@@ -370,6 +371,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - IQKeyboardManagerSwift
   - NotificationBannerSwift (~> 3.0.0)
   - RealmSwift
   - SwipeCellKit
@@ -395,6 +397,7 @@ SPEC REPOS:
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - IQKeyboardManagerSwift
     - leveldb-library
     - MarqueeLabel
     - nanopb
@@ -426,6 +429,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
@@ -437,6 +441,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 6f608cc1c210cd8e979fe0e84592348ad64c6ea4
+PODFILE CHECKSUM: b5e089c3cb824f867f63c614adc0350f7b49af02
 
 COCOAPODS: 1.9.3

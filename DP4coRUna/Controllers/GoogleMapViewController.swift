@@ -27,7 +27,11 @@ class GoogleMapViewController: UIViewController {
     @IBOutlet weak var Map: GMSMapView!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var destinationTextField: UITextField!
-    
+    var dataRecieved: String? {
+            willSet {
+                destinationTextField.text = newValue
+            }
+        }
     //record current position
     @IBAction func record(_ sender: Any) {
         var currentLoc: CLLocation!

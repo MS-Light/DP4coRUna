@@ -13,6 +13,7 @@ import FirebaseFirestore
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register for notifications
         FirebaseApp.configure()
         registerForPushNotifications()
+        IQKeyboardManager.shared.enable = true
         return true
     }
 
