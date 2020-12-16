@@ -11,9 +11,22 @@ import GooglePlaces
 import CoreLocation
 import RealmSwift
 import MapKit
+import GoogleMapsUtils
 //import SwiftSocket
 
+class POIItem: NSObject, GMUClusterItem {
+  var position: CLLocationCoordinate2D
+  var name: String!
 
+  init(position: CLLocationCoordinate2D, name: String) {
+    self.position = position
+    self.name = name
+  }
+}
+
+let kClusterItemCount = 10000
+var kCameraLatitude = -33.8
+var kCameraLongitude = 151.2
 class GoogleMapViewController: UIViewController {
     
     //instandtiate a location manager
@@ -21,6 +34,7 @@ class GoogleMapViewController: UIViewController {
     private let locationManager = CLLocationManager()
     var arrayPolyline = [GMSPolyline]()
     var selectedRought:String!
+    private var clusterManager: GMUClusterManager!
     
    
     // MARK: Create source location and destination location so that you can pass it to the URL
@@ -40,7 +54,11 @@ class GoogleMapViewController: UIViewController {
         mylocation.id = mylocation.IncrementaID()
         mylocation.latitude = currentLoc.coordinate.latitude
         mylocation.longitude = currentLoc.coordinate.longitude
-        
+        kCameraLatitude = mylocation.latitude
+        kCameraLongitude = mylocation.longitude
+        generateClusterItems()
+        // Call cluster() after items have been added to perform the clustering and rendering on map.
+        clusterManager.cluster()
         let realm = try! Realm()
         try! realm.write {
             realm.add(mylocation)
@@ -120,6 +138,19 @@ class GoogleMapViewController: UIViewController {
            // Add your serial task
           
           }
+        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(mapView: Map, clusterIconGenerator: iconGenerator)
+        clusterManager = GMUClusterManager(map: Map, algorithm: algorithm, renderer: renderer)
+        
+        // Register self to listen to GMSMapViewDelegate events.
+        clusterManager.setMapDelegate(self)
+        
+        // Generate and add random items to the cluster manager.
+        generateClusterItems()
+
+        // Call cluster() after items have been added to perform the clustering and rendering on map.
+        clusterManager.cluster()
     }
     
     
@@ -166,6 +197,17 @@ extension GoogleMapViewController: GMSMapViewDelegate {
         if let position:CLLocation = self.locationManager.location {
             reverseGeocodeCoordinate(position)
         }
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+      mapView.animate(toLocation: marker.position)
+      if let _ = marker.userData as? GMUCluster {
+        mapView.animate(toZoom: mapView.camera.zoom + 1)
+        NSLog("Did tap cluster")
+        return true
+      }
+      NSLog("Did tap marker")
+      return false
     }
 }
 
@@ -256,5 +298,21 @@ extension GoogleMapViewController: UITextFieldDelegate{
         destinationTextField.text = ""
     }
 }
+extension GoogleMapViewController{
+    private func generateClusterItems() {
+      let extent = 0.2
+      for _ in 1...kClusterItemCount {
+        let lat = kCameraLatitude + extent * randomScale()
+        let lng = kCameraLongitude + extent * randomScale()
+        let position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let marker = GMSMarker(position: position)
+        clusterManager.add(marker)
+      }
+    }
 
+    /// Returns a random value between -1.0 and 1.0.
+    private func randomScale() -> Double {
+      return Double(arc4random()) / Double(UINT32_MAX) * 2.0 - 1.0
+    }
+}
 // Handle the user's selection.

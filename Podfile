@@ -18,6 +18,7 @@ target 'DP4coRUna' do
   pod 'GoogleMaps'
   
   pod 'IQKeyboardManagerSwift'
+  pod 'Google-Maps-iOS-Utils'
 
   target 'DP4coRUnaTests' do
     inherit! :search_paths

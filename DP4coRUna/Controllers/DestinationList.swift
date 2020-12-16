@@ -41,12 +41,13 @@ class DestinationList: SwipeTableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let item = destinationCell?[indexPath.row] {
-            destinationtext = item.direction
-            let vc = GoogleMapViewController()
-            vc.dataRecieved = item.direction
-            navigationController?.popViewController(animated: true)
-            dismiss(animated: true, completion: nil)
- //           self.performSegue(withIdentifier: "sendbackDestination", sender: self)
+//            .
+////            destinationtext = item.direction
+////            let vc = GoogleMapViewController()
+////            vc.dataRecieved = item.direction
+////            navigationController?.popViewController(animated: true)
+////            dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "seeRecommandation", sender: self)
         }
         
         tableView.reloadData()
@@ -71,10 +72,10 @@ class DestinationList: SwipeTableViewController{
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendbackDestination"{
-            let destinationVC = segue.destination as! GoogleMapViewController
+        if segue.identifier == "seeRecommandation"{
+            let destinationVC = segue.destination as! RecommendPageViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                destinationVC.destinationTextField.text = destinationCell?[indexPath.row].direction
+                destinationVC.destinationValue = destinationCell?[indexPath.row].direction
             }
         }
     }

@@ -281,6 +281,22 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - Google-Maps-iOS-Utils (3.4.2):
+    - Google-Maps-iOS-Utils/Clustering (= 3.4.2)
+    - Google-Maps-iOS-Utils/Geometry (= 3.4.2)
+    - Google-Maps-iOS-Utils/Heatmap (= 3.4.2)
+    - Google-Maps-iOS-Utils/QuadTree (= 3.4.2)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (3.4.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (3.4.2):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (3.4.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (3.4.2):
+    - GoogleMaps
   - GoogleAppMeasurement (6.8.3):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -368,6 +384,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Messaging
   - FirebaseFirestoreSwift
+  - Google-Maps-iOS-Utils
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -389,6 +406,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
+    - Google-Maps-iOS-Utils
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleMaps
@@ -421,6 +439,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseInstanceID: ac5a82fcd21f804dbfc8f318eff9e1d7a9916e49
   FirebaseMessaging: fc1f98b4592f8f2ea538169b1c317c6e76f81300
+  Google-Maps-iOS-Utils: e8826ab68a4f81355a8e70678507a93cc6aab06b
   GoogleAppMeasurement: 966e88df9d19c15715137bb2ddaf52373f111436
   GoogleDataTransport: b7f406340a291370045a270c599e53c6fa6ec20f
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
@@ -441,6 +460,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: b5e089c3cb824f867f63c614adc0350f7b49af02
+PODFILE CHECKSUM: a093c7aa4071e5e81ae9dd986a02e41c1d416476
 
 COCOAPODS: 1.9.3
