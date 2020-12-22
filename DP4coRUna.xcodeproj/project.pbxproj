@@ -24,6 +24,7 @@
 		9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674124E2F0F700658554 /* SwipeTableViewController.swift */; };
 		9147674424E2F1A200658554 /* WiFiSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147674324E2F1A200658554 /* WiFiSourceController.swift */; };
 		9147E7F22533B53F00F4E115 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147E7F12533B53F00F4E115 /* StartViewController.swift */; };
+		914BD32A25903DBA006BA0A3 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BD32925903DBA006BA0A3 /* constant.swift */; };
 		914E6757258393EF005A43C9 /* RecommendPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E6756258393EF005A43C9 /* RecommendPageViewController.swift */; };
 		915FADA8254337C30020C298 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915FADA7254337C30020C298 /* Data.swift */; };
 		916033AC2567B8560021F690 /* DestinationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916033AB2567B8560021F690 /* DestinationList.swift */; };
@@ -47,8 +48,8 @@
 		918502C024F0722F0062665F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502BF24F0722F0062665F /* SettingsController.swift */; };
 		918502C224F079230062665F /* DetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502C124F079230062665F /* DetectorViewController.swift */; };
 		918502C424F07B9D0062665F /* LoggerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918502C324F07B9D0062665F /* LoggerSetting.swift */; };
-		91A13ADC24DB58B90035F9FE /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADB24DB58B90035F9FE /* constant.swift */; };
 		91A13ADE24DB6D320035F9FE /* SaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A13ADD24DB6D320035F9FE /* SaveOptions.swift */; };
+		91A23F292590399200AA3A3C /* DataSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A23F282590399200AA3A3C /* DataSave.swift */; };
 		91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EC24D25926009EA97F /* AppDelegate.swift */; };
 		91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557EE24D25926009EA97F /* SceneDelegate.swift */; };
 		91C557F124D25926009EA97F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C557F024D25926009EA97F /* MapViewController.swift */; };
@@ -105,6 +106,7 @@
 		9147674124E2F0F700658554 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9147674324E2F1A200658554 /* WiFiSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSourceController.swift; sourceTree = "<group>"; };
 		9147E7F12533B53F00F4E115 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		914BD32925903DBA006BA0A3 /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		914E6756258393EF005A43C9 /* RecommendPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendPageViewController.swift; sourceTree = "<group>"; };
 		915FADA7254337C30020C298 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		916033AB2567B8560021F690 /* DestinationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationList.swift; sourceTree = "<group>"; };
@@ -128,8 +130,8 @@
 		918502BF24F0722F0062665F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		918502C124F079230062665F /* DetectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorViewController.swift; sourceTree = "<group>"; };
 		918502C324F07B9D0062665F /* LoggerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerSetting.swift; sourceTree = "<group>"; };
-		91A13ADB24DB58B90035F9FE /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		91A13ADD24DB6D320035F9FE /* SaveOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOptions.swift; sourceTree = "<group>"; };
+		91A23F282590399200AA3A3C /* DataSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSave.swift; sourceTree = "<group>"; };
 		91C557E924D25926009EA97F /* DP4coRUna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP4coRUna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C557EC24D25926009EA97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C557EE24D25926009EA97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -314,8 +316,9 @@
 				9167DC1C255DE8E700902489 /* Socket */,
 				918502AE24F067240062665F /* BlueTooth */,
 				91F941A124EF276200F70EE1 /* WiFiInfoService.swift */,
-				91A13ADB24DB58B90035F9FE /* constant.swift */,
 				91A13ADD24DB6D320035F9FE /* SaveOptions.swift */,
+				91A23F282590399200AA3A3C /* DataSave.swift */,
+				914BD32925903DBA006BA0A3 /* constant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				918502C024F0722F0062665F /* SettingsController.swift in Sources */,
+				914BD32A25903DBA006BA0A3 /* constant.swift in Sources */,
 				9147674024E2EF1B00658554 /* SignalDetail.swift in Sources */,
 				918502B524F067800062665F /* Helpers.swift in Sources */,
 				918502B624F067800062665F /* Bluetooth.swift in Sources */,
@@ -647,12 +651,12 @@
 				9167DC4D255DEDE500902489 /* GoogleMapViewController.swift in Sources */,
 				9147674224E2F0F700658554 /* SwipeTableViewController.swift in Sources */,
 				916033B12567BA230021F690 /* DirectionList1.swift in Sources */,
+				91A23F292590399200AA3A3C /* DataSave.swift in Sources */,
 				918502BC24F06CF30062665F /* ultrasonicData.swift in Sources */,
 				912157AB24E4E28E006D6A5B /* PlaceInfo.swift in Sources */,
 				918502C224F079230062665F /* DetectorViewController.swift in Sources */,
 				8831028924F1E3CF0002B04F /* NotificationController.swift in Sources */,
 				913BF73C24F88D3200906C8A /* CentralViewController.swift in Sources */,
-				91A13ADC24DB58B90035F9FE /* constant.swift in Sources */,
 				91C557ED24D25926009EA97F /* AppDelegate.swift in Sources */,
 				91C557EF24D25926009EA97F /* SceneDelegate.swift in Sources */,
 				912157A724E4DA80006D6A5B /* AddPlaceInfoController.swift in Sources */,

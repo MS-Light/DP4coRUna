@@ -28,6 +28,6 @@ struct K{
     
     static let MapDirection: String = "https://maps.googleapis.com/maps/api/directions/json?"
     // static let apiKey: String = "AIzaSyAVNAC9MF3dCTaMv51UBUcFbr87njo4NGk"
-    static let apiKey: String = ""
+    static let apiKey: String = "AIzaSyCjqdL7oxEBebvhM9WaDyMLQWn7NpBemEg"
     static let gotorecommendation: String = "seeRecommandation"
 }

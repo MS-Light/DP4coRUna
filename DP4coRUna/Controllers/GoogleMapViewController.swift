@@ -130,6 +130,7 @@ class GoogleMapViewController: UIViewController {
         Map.isMyLocationEnabled = true
         Map.settings.myLocationButton = true
         Map.delegate = self
+        
         directionManager.delegate = self
         destinationTextField.delegate = self
         //testServer()
@@ -203,6 +204,7 @@ extension GoogleMapViewController: GMSMapViewDelegate {
       mapView.animate(toLocation: marker.position)
       if let _ = marker.userData as? GMUCluster {
         mapView.animate(toZoom: mapView.camera.zoom + 1)
+        print("You tapped : \(marker.position.latitude),\(marker.position.longitude)")
         NSLog("Did tap cluster")
         return true
       }
@@ -224,7 +226,7 @@ extension GoogleMapViewController: DirectionManagerDelegate{
             let start = GMSMarker()
             start.position = CLLocationCoordinate2D(latitude: direction.origin.lat, longitude: direction.origin.lng)
             start.title = "start point"
-            start.snippet = "Hi"
+            //start.snippet = "Hi"
             start.map = self.Map
             start.icon = GMSMarker.markerImage(with: UIColor.green)
             
@@ -313,6 +315,31 @@ extension GoogleMapViewController{
     /// Returns a random value between -1.0 and 1.0.
     private func randomScale() -> Double {
       return Double(arc4random()) / Double(UINT32_MAX) * 2.0 - 1.0
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+            //mapView.clear()
+            let position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let marker = GMSMarker(position: position)
+            marker.title = "Destination"
+            marker.map = mapView
+
+    }
+    
+    func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
+
+        if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+
+            UIApplication.shared.open(NSURL(string:"comgooglemaps://?saddr=&daddr=\(marker.position.latitude),\(marker.position.longitude)&directionsmode=driving")! as URL, options: [:], completionHandler: nil)
+        }
+        else {
+
+            let alert = UIAlertController(title: "Google Maps not found", message: "Please install Google Maps in your device.", preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 // Handle the user's selection.
