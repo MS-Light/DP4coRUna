@@ -12,6 +12,7 @@ import CoreLocation
 import RealmSwift
 import MapKit
 import GoogleMapsUtils
+import CoreMotion
 //import SwiftSocket
 
 class POIItem: NSObject, GMUClusterItem {
@@ -29,6 +30,7 @@ var kCameraLatitude = -33.8
 var kCameraLongitude = 151.2
 class GoogleMapViewController: UIViewController {
     
+
     //instandtiate a location manager
     var directionManager = DirectionManager()
     private let locationManager = CLLocationManager()
@@ -36,6 +38,17 @@ class GoogleMapViewController: UIViewController {
     var selectedRought:String!
     private var clusterManager: GMUClusterManager!
     
+    //global Data for deadreckoning
+    var from_date = Date()
+    var to_date = Date()
+    var heading = Double()
+    var y_distance = Double()
+    var x_distance = Double()
+    var current_lat = Double()
+    var current_lot = Double()
+    let pedometer = CMPedometer()
+    let lengthFormatter = LengthFormatter()
+    var pedemoterStarted : Bool = false
    
     // MARK: Create source location and destination location so that you can pass it to the URL
     @IBOutlet weak var Map: GMSMapView!
@@ -47,21 +60,73 @@ class GoogleMapViewController: UIViewController {
             }
         }
     //record current position
+    @IBOutlet weak var recording: UIButton!
     @IBAction func record(_ sender: Any) {
-        var currentLoc: CLLocation!
-        currentLoc = locationManager.location
         let mylocation = locationdata()
-        mylocation.id = mylocation.IncrementaID()
-        mylocation.latitude = currentLoc.coordinate.latitude
-        mylocation.longitude = currentLoc.coordinate.longitude
-        kCameraLatitude = mylocation.latitude
-        kCameraLongitude = mylocation.longitude
-        generateClusterItems()
-        // Call cluster() after items have been added to perform the clustering and rendering on map.
-        clusterManager.cluster()
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(mylocation)
+        if(locationManager.location!.horizontalAccuracy>10){
+            //the case when user indoor, GPS accuracy is low
+            //then we use indoor localization "decdreckoning"
+            //it calculate from distance(CMpedometer) and north_heading(compass)
+            from_date = Date()
+            y_distance = 0
+            x_distance = 0
+            heading = locationManager.location!.course
+            print("heading from course")
+            print(heading)
+            if pedemoterStarted {
+                //self.stopCounting()
+                self.stopheading()
+                //convert meter to latitude and longitude
+                
+                current_lat = current_lat + x_distance/111.139
+                current_lot = current_lot + y_distance/111.139
+                print(current_lat,current_lot)
+                /*
+                let current_location = GMSMarker()
+                current_location.position = CLLocationCoordinate2D(latitude:current_lat, longitude: current_lot)
+                current_location.title = "current_location"
+                current_location.snippet = "Hi"
+                current_location.map = self.Map
+                */
+                let mylocation = locationdata()
+                mylocation.id = mylocation.IncrementaID()
+                mylocation.latitude = current_lat
+                mylocation.longitude = current_lot
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(mylocation)
+                }
+                pedemoterStarted = !pedemoterStarted
+                self.recording.setTitle("record init", for: .normal)
+            }
+            else{
+                current_lat = (locationManager.location?.coordinate.latitude)!
+                current_lot = (locationManager.location?.coordinate.longitude)!
+                print(current_lat,current_lot)
+                //self.startCounting()
+                self.startHeading()
+                print("start counting")
+                pedemoterStarted = !pedemoterStarted
+                self.recording.setTitle("get recordinhg", for: .normal)
+            }
+              
+        }else{
+            var currentLoc: CLLocation!
+            currentLoc = locationManager.location
+            let mylocation = locationdata()
+            mylocation.id = mylocation.IncrementaID()
+            mylocation.latitude = currentLoc.coordinate.latitude
+            mylocation.longitude = currentLoc.coordinate.longitude
+            kCameraLatitude = mylocation.latitude
+            kCameraLongitude = mylocation.longitude
+            generateClusterItems()
+            // Call cluster() after items have been added to perform the clustering and rendering on map.
+            clusterManager.cluster()
+        
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(mylocation)
+            }
         }
     }
     
@@ -125,6 +190,10 @@ class GoogleMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        locationManager.allowsBackgroundLocationUpdates = true
+        //locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.distanceFilter = 5
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         Map.isMyLocationEnabled = true
@@ -190,6 +259,43 @@ extension GoogleMapViewController: CLLocationManagerDelegate {
     Map.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
     locationManager.stopUpdatingLocation()
   }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        print("received heading change")
+        if newHeading.headingAccuracy < 0 {
+            print("heading change not accuracy")
+                    return
+        }
+        //user change direction in this case
+        //time to calculate the distance for the previous heading
+        
+        //update current time
+        to_date = Date()
+        var distance = Double()
+        
+        if CMPedometer.isStepCountingAvailable() {
+            pedometer.queryPedometerData(from: from_date, to: to_date) { (data, error) in
+                distance = data?.distance as! Double
+                print(data)
+            }
+        }
+        y_distance = y_distance+cos(heading)*distance
+        x_distance = x_distance+sin(heading)*distance
+        print(x_distance,y_distance)
+        from_date = to_date
+        
+        /*
+        let heading: CLLocationDirection = ((newHeading.trueHeading > 0) ?
+                    newHeading.trueHeading : newHeading.magneticHeading);
+        print(newHeading.magneticHeading)
+        print("heading")*/
+        heading = newHeading.trueHeading
+        print(heading)
+    }
+    func locationManager(_ manager: CLLocationManager,
+                         didFailWithError error: Error){
+        print("heading failed with error")
+    }
 }
 
 // MARK: - GMSMapViewDelegate
@@ -359,6 +465,7 @@ extension GoogleMapViewController{
 
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
+                    group.leave()
                     print(error?.localizedDescription ?? "No data")
                     return
                 }
@@ -386,9 +493,11 @@ extension GoogleMapViewController{
         
             for my_location in location{
                 print("add points")
-               
-                path.add(CLLocationCoordinate2D(latitude: my_location[0], longitude: my_location[1]))
-                print(my_location)
+                if my_location != nil && my_location.count > 0 {
+                
+                    path.add(CLLocationCoordinate2D(latitude: my_location[0], longitude: my_location[1]))
+                    print(my_location)
+                }
                 
             }
             let polyline = GMSPolyline(path: path)
@@ -417,4 +526,51 @@ extension GoogleMapViewController{
         }
     }
 }
+
 // Handle the user's selection.
+extension GoogleMapViewController{
+    
+    func startCounting() {
+        let date = Date()
+        if CMPedometer.isStepCountingAvailable() {
+            self.pedometer.startUpdates(from: date) { (data: CMPedometerData?, error) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
+                    if(error == nil) {
+                        print("\(data!.numberOfSteps)")
+                        let distance = data!.distance?.doubleValue
+                        let steps = data!.numberOfSteps.doubleValue
+                        
+                        print(String(steps))
+                        print(self.lengthFormatter.string(fromMeters: distance!))
+
+                        
+                    } else {
+                        print("Pedometer error \(String(describing: error))")
+                    }
+                })
+            }
+        } else {
+            print("Pedometer is not available")
+        }
+    }
+    
+    func stopCounting() {
+        self.pedometer.stopUpdates()
+    }
+    
+    func startHeading(){
+        print("try heading")
+        if (CLLocationManager.headingAvailable()) {
+            print("heading start")
+            locationManager.headingFilter = 40
+            locationManager.startUpdatingHeading()
+            locationManager.delegate = self
+        }
+    }
+
+    
+    func stopheading(){
+        locationManager.stopUpdatingHeading()
+    }
+    
+}
