@@ -81,7 +81,7 @@ class GoogleMapViewController: UIViewController {
             //marker.icon = self.imageWithImage(image: UIImage(named: "virus.png")!, scaledToSize: CGSize(width: 30.0, height: 30.0))
           }
     }
-
+    
     /*
     func echoService(client: TCPClient) {
         print("Newclient from:\(client.address)[\(client.port)]")
@@ -209,6 +209,7 @@ extension GoogleMapViewController: GMSMapViewDelegate {
         return true
       }
       NSLog("Did tap marker")
+    print("You tapped : \(marker.position.latitude),\(marker.position.longitude)")
       return false
     }
 }
@@ -321,9 +322,71 @@ extension GoogleMapViewController{
             //mapView.clear()
             let position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
             let marker = GMSMarker(position: position)
+            
+        
+        // prepare json data
+        var currentLoc: CLLocation!
+        currentLoc = locationManager.location
+        let mylocation = locationdata()
+        mylocation.id = mylocation.IncrementaID()
+        let x1 = currentLoc.coordinate.latitude
+        let y1 = currentLoc.coordinate.longitude
+       // let x1 = 40.546323
+       // let y1 = -74.3368945
+        
+        let x2 = coordinate.latitude
+        let y2 = coordinate.longitude
+        DispatchQueue.main.async {
+            let json: [String: Any] = ["A": ["x":x1,"y":y1],
+                                   "B": ["x":x2,"y":y2]]
+
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+            // create post request
+            let url = URL(string: "http://192.168.1.56:5000/python")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+
+            // insert json data to the request
+            request.httpBody = jsonData
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")        // the expected response is also JSON
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    //print(responseJSON)
+                    guard let location_array = responseJSON["return"] as? Array<Array<Double>> else { return }
+                    print("success extract")
+                    print(location_array)
+                    let path = GMSMutablePath()
+                    for location in location_array{
+                        /*
+                        let new_position = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
+                        let new_marker = GMSMarker(position: new_position)
+                        new_marker.icon = [self image:marker.icon scaledToSize:CGSizeMake(3.0f, 3.0f)]
+                        */
+                        path.add(CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
+                    }
+                    let polyline = GMSPolyline(path:path)
+                    
+                    polyline.map = mapView
+                    
+                        
+                }
+            }
+
+            task.resume()
+        }
+            
+            
             marker.title = "Destination"
             marker.map = mapView
-
+            
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
