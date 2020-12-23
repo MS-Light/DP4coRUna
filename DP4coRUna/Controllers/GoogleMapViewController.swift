@@ -320,29 +320,34 @@ extension GoogleMapViewController{
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
             //mapView.clear()
+        DispatchQueue.main.async{
+            self.Map.clear()
             let position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
             let marker = GMSMarker(position: position)
             
         
         // prepare json data
         var currentLoc: CLLocation!
-        currentLoc = locationManager.location
+        currentLoc = self.locationManager.location
         let mylocation = locationdata()
         mylocation.id = mylocation.IncrementaID()
         let x1 = currentLoc.coordinate.latitude
         let y1 = currentLoc.coordinate.longitude
        // let x1 = 40.546323
        // let y1 = -74.3368945
-        
+        var location:Array<Array<Double>>
+        location = [[]]
         let x2 = coordinate.latitude
         let y2 = coordinate.longitude
-        DispatchQueue.main.async {
+       
             let json: [String: Any] = ["A": ["x":x1,"y":y1],
                                    "B": ["x":x2,"y":y2]]
 
             let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
             // create post request
+            let group = DispatchGroup()
+                group.enter()
             let url = URL(string: "http://192.168.1.56:5000/python")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -363,30 +368,37 @@ extension GoogleMapViewController{
                     guard let location_array = responseJSON["return"] as? Array<Array<Double>> else { return }
                     print("success extract")
                     print(location_array)
-                    let path = GMSMutablePath()
+                    location = location_array
+                    group.leave()
+                    /*
                     for location in location_array{
-                        /*
-                        let new_position = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
-                        let new_marker = GMSMarker(position: new_position)
-                        new_marker.icon = [self image:marker.icon scaledToSize:CGSizeMake(3.0f, 3.0f)]
-                        */
-                        path.add(CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
-                    }
-                    let polyline = GMSPolyline(path:path)
-                    
-                    polyline.map = mapView
-                    
-                        
+                        if (period%30==0){// take points from every 30 location
+                            period = period+1
+                            path.add(CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
+                        }
+                    }*/
+                    //let polyline = GMSPolyline(path:path)
                 }
             }
-
             task.resume()
-        }
+            group.wait()
+            let path = GMSMutablePath()
+        
+            for my_location in location{
+                print("add points")
+               
+                path.add(CLLocationCoordinate2D(latitude: my_location[0], longitude: my_location[1]))
+                print(my_location)
+                
+            }
+            let polyline = GMSPolyline(path: path)
+            polyline.strokeWidth = 3
+            self.Map.animate(with: GMSCameraUpdate.fit(GMSCoordinateBounds(path: path), withPadding: 30))
             
-            
+            polyline.map = mapView
             marker.title = "Destination"
             marker.map = mapView
-            
+        }
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
