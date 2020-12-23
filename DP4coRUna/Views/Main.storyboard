@@ -1826,8 +1826,8 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="8fi-AP-6hE">
-                                <rect key="frame" x="20" y="188" width="374" height="525"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="8fi-AP-6hE">
+                                <rect key="frame" x="20" y="186" width="374" height="575"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOE-gK-xAO">
                                         <rect key="frame" x="12" y="0.5" width="350" height="349"/>
@@ -1842,14 +1842,14 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3H-Gk-YHI">
-                                        <rect key="frame" x="142" y="393" width="90" height="53"/>
+                                        <rect key="frame" x="142" y="393" width="90" height="103"/>
                                         <state key="normal" title="Notify others"/>
                                         <connections>
                                             <action selector="notify:" destination="nx6-t4-ZoG" eventType="touchUpInside" id="IXu-ZB-Eyp"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="hOV-nc-b9q">
-                                        <rect key="frame" x="85.5" y="489" width="203" height="36"/>
+                                        <rect key="frame" x="85.5" y="539" width="203" height="36"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R U Sick?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqY-xF-0LY">
                                                 <rect key="frame" x="0.0" y="0.0" width="123" height="36"/>
@@ -1872,7 +1872,7 @@ M: number of 1 decisions for detection to be declared.  T: threshold time, s
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8fi-AP-6hE" firstAttribute="leading" secondItem="TMC-62-xDV" secondAttribute="leading" constant="20" id="3u3-Pq-Alx"/>
-                            <constraint firstItem="TMC-62-xDV" firstAttribute="bottom" secondItem="8fi-AP-6hE" secondAttribute="bottom" constant="100" id="A2w-bc-xUI"/>
+                            <constraint firstItem="TMC-62-xDV" firstAttribute="bottom" secondItem="8fi-AP-6hE" secondAttribute="bottom" constant="50" id="A2w-bc-xUI"/>
                             <constraint firstItem="8fi-AP-6hE" firstAttribute="top" secondItem="TMC-62-xDV" secondAttribute="top" constant="100" id="ATb-8P-Dnd"/>
                             <constraint firstItem="TMC-62-xDV" firstAttribute="trailing" secondItem="8fi-AP-6hE" secondAttribute="trailing" constant="20" id="mfj-OY-eeG"/>
                         </constraints>

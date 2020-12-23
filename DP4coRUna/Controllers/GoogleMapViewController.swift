@@ -13,6 +13,8 @@ import RealmSwift
 import MapKit
 import GoogleMapsUtils
 import CoreMotion
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 //import SwiftSocket
 
 class POIItem: NSObject, GMUClusterItem {
@@ -63,7 +65,7 @@ class GoogleMapViewController: UIViewController {
     @IBOutlet weak var recording: UIButton!
     @IBAction func record(_ sender: Any) {
         let mylocation = locationdata()
-        if(locationManager.location!.horizontalAccuracy>10){
+        /*if(locationManager.location!.horizontalAccuracy>10){
             //the case when user indoor, GPS accuracy is low
             //then we use indoor localization "decdreckoning"
             //it calculate from distance(CMpedometer) and north_heading(compass)
@@ -110,10 +112,9 @@ class GoogleMapViewController: UIViewController {
                 self.recording.setTitle("get recordinhg", for: .normal)
             }
               
-        }else{
+        }else{*/
             var currentLoc: CLLocation!
             currentLoc = locationManager.location
-            let mylocation = locationdata()
             mylocation.id = mylocation.IncrementaID()
             mylocation.latitude = currentLoc.coordinate.latitude
             mylocation.longitude = currentLoc.coordinate.longitude
@@ -127,13 +128,51 @@ class GoogleMapViewController: UIViewController {
             try! realm.write {
                 realm.add(mylocation)
             }
-        }
+       // }
     }
     
     //show marker on map
     @IBAction func showdata(_ sender: Any) {
-        //var iconBase = "https://maps.google.com/mapfiles/kml/shapes/"
+        DispatchQueue.main.async {
+            let db = Firestore.firestore()
+            let docRef = db.collection("positive_case").document("NJ")
+                
+            let marker = GMSMarker()
+            var location:CLLocationCoordinate2D
+            location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+           // marker.map = Map
+          //marker.icon = self.imageWithImage(image: UIImage(named: "virus.png")!, scaledToSize: CGSize(width: 30.0, height: 30.0))
+            docRef.getDocument { (snapshot, err) in
+                if let data = snapshot?.data() {
+                    print(data)
+                    //location = CLLocationCoordinate2D(latitude: data["lat"], longitude: data["lot"]) as CLLocationCoordinate2D
+                } else {
+                    print("Couldn't find the document")
+                }
+            marker.position = location
+                marker.map = self.Map
+
+        }
+            
+    }
+        /*
+        let circleCenter = CLLocationCoordinate2D(latitude: 40.54719, longitude: -74.33571)
+        let circle1 = GMSCircle(position: circleCenter, radius: 5)
+        circle1.strokeWidth = 2
+        circle1.strokeColor = UIColor.blue
+        circle1.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+        circle1.map = self.Map
         
+        let circleCenter1 = CLLocationCoordinate2D(latitude: 40.54887, longitude: -74.33565)
+        let circle2 = GMSCircle(position: circleCenter1, radius: 5)
+        circle2.strokeWidth = 2
+        circle2.strokeColor = UIColor.blue
+        circle2.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+        circle2.map = self.Map
+        */
+        
+        //var iconBase = "https://maps.google.com/mapfiles/kml/shapes/"
+        /*
         let realm = try! Realm()
         // Read some data from the bundled Realm
         let results = realm.objects(locationdata.self)
@@ -145,6 +184,10 @@ class GoogleMapViewController: UIViewController {
               marker.map = Map
             //marker.icon = self.imageWithImage(image: UIImage(named: "virus.png")!, scaledToSize: CGSize(width: 30.0, height: 30.0))
           }
+        */
+        
+        //now show the data from Firebase
+        
     }
     
     /*

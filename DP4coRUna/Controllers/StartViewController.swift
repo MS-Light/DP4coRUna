@@ -7,6 +7,9 @@
 
 import UIKit
 import RealmSwift
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import Firebase
 
 class StartViewController: UIViewController {
     @IBOutlet weak var startButtonOutlet: UIButton!
@@ -100,7 +103,7 @@ class StartViewController: UIViewController {
                                    "dict": ["1":"First", "2":"Second"]]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         // create post request
-        let url = URL(string: "http://192.168.0.174:5000")!
+        let url = URL(string: "http://192.168.1.56:5000")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         // insert json data to the request
@@ -116,6 +119,35 @@ class StartViewController: UIViewController {
             }
         }
         task.resume()
+        
+        //post location data to firebase
+        DispatchQueue.main.async {
+            let db = Firestore.firestore()
+            print("load firebase")
+            let realm = try! Realm()
+            // Read some data from the bundled Realm
+            let results = realm.objects(locationdata.self)
+            for a in results {
+                print("success loading data into cloud")
+                let x = a.latitude
+                let y = a.longitude
+                
+                db.collection("positive_case").document("NJ").setData([
+                    "population": 1,
+                    "lat":x,
+                    "lot":y
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
+                //print(a.latitude)
+                //print(a.longitude)
+            }
+        }
+        
     }
 
     @IBAction func sickSwitch(_ sender: UISwitch) {

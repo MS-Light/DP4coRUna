@@ -151,6 +151,7 @@
 		AC1598344D729F18F8029AE5 /* Pods-DP4coRUna-DP4coRUnaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna-DP4coRUnaUITests.debug.xcconfig"; path = "Target Support Files/Pods-DP4coRUna-DP4coRUnaUITests/Pods-DP4coRUna-DP4coRUnaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB7AED0E8CFE377EB1B1283C /* Pods_DP4coRUna_DP4coRUnaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DP4coRUna_DP4coRUnaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCD8880AF556DAA663EA010 /* Pods-DP4coRUna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DP4coRUna.debug.xcconfig"; path = "Target Support Files/Pods-DP4coRUna/Pods-DP4coRUna.debug.xcconfig"; sourceTree = "<group>"; };
+		CE9A93BE2593855C0074246F /* DP4coRUna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DP4coRUna.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +278,7 @@
 		91C557EB24D25926009EA97F /* DP4coRUna */ = {
 			isa = PBXGroup;
 			children = (
+				CE9A93BE2593855C0074246F /* DP4coRUna.entitlements */,
 				9171970A253A5ADA00A7B787 /* GoogleService-Info.plist */,
 				91C5581F24D2598E009EA97F /* Controllers */,
 				91C5581E24D25987009EA97F /* Views */,
@@ -849,6 +851,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DP4coRUna/DP4coRUna.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDQC76VPWK;
@@ -872,6 +875,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DP4coRUna/DP4coRUna.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDQC76VPWK;
